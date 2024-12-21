@@ -4,6 +4,8 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
 
+vim.opt.clipboard = 'unnamedplus'
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -38,8 +40,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
--- Newtr
-vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+-- Nvim Tree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Buffer Remaps
 vim.keymap.set("n", "<leader>bn", ":bn<CR>", {})
