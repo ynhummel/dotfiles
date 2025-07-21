@@ -1,0 +1,6 @@
+theme = MaterialDesignColors
+background-opacity = 0.98
+font-size = 14
+
+#gtk-titlebar = false 
+gtk-titlebar-hide-when-maximized = true

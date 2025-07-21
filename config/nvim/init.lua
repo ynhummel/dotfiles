@@ -1,3 +1,7 @@
+-- Disable netrw for nvimtree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.termguicolors = true
 
 vim.opt.nu = true
@@ -44,9 +48,12 @@ require("lazy").setup("plugins")
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Buffer Remaps
-vim.keymap.set("n", "<leader>bn", ":bn<CR>", {})
-vim.keymap.set("n", "<leader>bp", ":bp<CR>", {})
-vim.keymap.set("n", "<leader>bd", ":bd<CR>", {})
+vim.keymap.set("n", "<leader>bn", ":bn<CR>", {})                        -- next buffer
+vim.keymap.set("n", "<leader>bp", ":bp<CR>", {})                        -- previous buffer
+vim.keymap.set("n", "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", {})   -- kill buffer without closing window
+
+-- Panes remap (work with tmux)
+vim.keymap.set("n", "<C-w>h", "<C-w>s")
 
 -- General Remaps
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -56,18 +63,18 @@ vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>y", '"+Y')
 
 -- Auto closing
-vim.keymap.set("i", "(<space>", "()<C-c>i")
-vim.keymap.set("i", "{<space>", "{}<C-c>i")
-vim.keymap.set("i", "[<space>", "[]<C-c>i")
-vim.keymap.set("i", "'<space>", "''<C-c>i")
-vim.keymap.set("i", '"<space>', '""<C-c>i')
-vim.keymap.set("i", "`<space>", "``<C-c>i")
+-- vim.keymap.set("i", "(<space>", "()<C-c>i")
+-- vim.keymap.set("i", "{<space>", "{}<C-c>i")
+-- vim.keymap.set("i", "[<space>", "[]<C-c>i")
+-- vim.keymap.set("i", "'<space>", "''<C-c>i")
+-- vim.keymap.set("i", '"<space>', '""<C-c>i')
+-- vim.keymap.set("i", "`<space>", "``<C-c>i")
 
 -- Auto closing with lineBreak
-vim.keymap.set("i", "(<CR>", "(<CR>)<C-c>O")
-vim.keymap.set("i", "{<CR>", "{<CR>}<C-c>O")
+-- vim.keymap.set("i", "(<CR>", "(<CR>)<C-c>O")
+-- vim.keymap.set("i", "{<CR>", "{<CR>}<C-c>O")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.cmd("colorscheme tokyonight-moon")
+vim.cmd("colorscheme onedark")

@@ -61,9 +61,13 @@ alias egrep='egrep --color'
 alias ll='ls -alF'
 alias la='ls -A'
 
+# cat tools
+alias cat='bat'
+
 # config alias
 alias vimconf="nvim ~/.config/nvim --cmd 'cd ~/.config/nvim'"
-alias termconf="nvim ~/.wezterm.lua"
+alias wezconf="nvim ~/.wezterm.lua"
+alias termconf="nvim ~/.config/ghostty/config"
 alias zconf="nvim ~/.config/zsh/.zshrc"
 alias zsource="source ~/.config/zsh/.zshrc"
 
@@ -71,7 +75,7 @@ alias zsource="source ~/.config/zsh/.zshrc"
 alias jnl="nvim ~/VimNotes/Journal/$(date +%y-%d-%m.md)"
 alias vfolder="nvim ~/VimNotes/"
 
-alias emacs="emacsclient -c -a 'emacs'"
+# alias emacs="emacsclient -c -a 'emacs'"
 
 # Lazy
 alias lzd="lazydocker"
@@ -84,10 +88,7 @@ export PATH=$PATH:$GOINSTALL:$GOPATH/bin
 
 # Set Zig
 export ZIGPATH="$HOME/zig"
-export PATH="$PATH:$ZIGPATH/zig-linux-x86_64-0.14.0-dev.2245+4fc295dc0"
-
-#DOOM
-export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$PATH:$ZIGPATH/zig-linux-x86_64-0.13.0"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -95,3 +96,17 @@ export PATH="$PATH:$HOME/.config/emacs/bin"
 # NVM
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f "/home/yurihummel/.ghcup/env" ] && . "/home/yurihummel/.ghcup/env" # ghcup-env
+
+# Set PHP
+export PHP_INI_SCAN_DIR="/home/yurihummel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+export PATH="$PATH:$PHP_INI_SCAN_DIR"
+
+# libgit2
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib:/usr/local/lib/pkgconfig
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+# ASDF
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
