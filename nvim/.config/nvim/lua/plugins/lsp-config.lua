@@ -23,13 +23,6 @@ return {
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-            lspconfig.hls.setup({ capabilities = capabilities }) -- haskell
-            lspconfig.elixirls.setup(
-                {
-                    cmd = { "/home/yurihummel/Sources/elixir-ls/scripts/language_server.sh" },
-                    capabilities = capabilities
-                }
-            )
             -- lspconfig.ruby_lsp.setup({ capabilities = capabilities })
             -- lspconfig.rubocop.setup({ capabilities = capabilities, cmd = { "bundle", "exec", "rubocop", "--lsp" } })
             lspconfig.ts_ls.setup({

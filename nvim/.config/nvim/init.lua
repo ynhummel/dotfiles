@@ -62,18 +62,6 @@ vim.keymap.set("n", "«leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>y", '"+Y')
 
--- Auto closing
--- vim.keymap.set("i", "(<space>", "()<C-c>i")
--- vim.keymap.set("i", "{<space>", "{}<C-c>i")
--- vim.keymap.set("i", "[<space>", "[]<C-c>i")
--- vim.keymap.set("i", "'<space>", "''<C-c>i")
--- vim.keymap.set("i", '"<space>', '""<C-c>i')
--- vim.keymap.set("i", "`<space>", "``<C-c>i")
-
--- Auto closing with lineBreak
--- vim.keymap.set("i", "(<CR>", "(<CR>)<C-c>O")
--- vim.keymap.set("i", "{<CR>", "{<CR>}<C-c>O")
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
