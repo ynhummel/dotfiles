@@ -13,5 +13,8 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$ZDOTDIR/.zsh_history" # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 . "$HOME/.cargo/env"
+
 export PATH=~/bin:$PATH

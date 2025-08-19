@@ -23,16 +23,9 @@ return {
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-            -- lspconfig.ruby_lsp.setup({ capabilities = capabilities })
-            -- lspconfig.rubocop.setup({ capabilities = capabilities, cmd = { "bundle", "exec", "rubocop", "--lsp" } })
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities,
-                format = { enable = false },
-                diagnostics = { ignoredCodes = { 6133 } },
-            })
-            lspconfig.eslint.setup({ capabilities = capabilities })
-            lspconfig.yamlls.setup({ capabilities = capabilities })
-            lspconfig.phpactor.setup({ capabilities = capabilities })
+
+            lspconfig.html.setup({ capabilities = capabilities })
+            lspconfig.cssls.setup({ capabilities = capabilities })
 
             vim.keymap.set("n", "<space>fd", vim.diagnostic.open_float)
             vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
