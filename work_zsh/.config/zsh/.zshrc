@@ -40,7 +40,6 @@ cursor_mode
 
 # ========== ALIASES ==========
 alias vim="nvim"
-alias nvim="/usr/local/bin/nvim/bin/nvim"
 alias docom="docker compose"
 
 # Git Alias
