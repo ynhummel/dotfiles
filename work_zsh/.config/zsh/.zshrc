@@ -2,7 +2,12 @@
 source $ZDOTDIR/completions.zsh
 
 #PROMPT
-PROMPT='%n@%m %1~ %# '
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+
+setopt PROMPT_SUBST
+PROMPT='%n@%m %1~ %F{red}${vcs_info_msg_0_}%f%# '
 
 # VIM MODE
 bindkey -v
