@@ -1,0 +1,12 @@
+[window]
+padding.x = 0
+padding.y = 0
+decorations = "buttonless" # "full", "buttonless", "none"
+opacity = 0.92
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+size = 14.0
