@@ -1,3 +1,4 @@
+
 (setq custom-file "~/.emacs.d/custom.el")
 
 (setq inhibit-startup-message t)
@@ -18,4 +19,15 @@
       scroll-conservatively 10)
 (setq inhibit-startup-message t)
 
-(load-theme 'wombat) 
+(load-theme 'wombat)
+
+(setq mac-command-modifier 'meta)
+
+
+;;;                   ;;;
+;;;  Package Manager  ;;;
+;;;                   ;;;
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
