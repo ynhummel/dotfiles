@@ -1,5 +1,6 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
+(load-file custom-file)
 
 (setq inhibit-startup-message t)
 
