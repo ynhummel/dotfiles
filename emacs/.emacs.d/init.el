@@ -25,7 +25,6 @@
 
 (setq-default indent-tabs-mode nil)
 
-
 ;;;                   ;;;
 ;;;  Package Manager  ;;;
 ;;;                   ;;;
@@ -39,9 +38,6 @@
   (package-install 'use-package))
 (eval-and-compile
   (setq use-package-expand-minimally t))
-
-(use-package eglot
-  :ensure t)
 
 (use-package racket-mode
   :ensure t)
