@@ -23,6 +23,8 @@
 
 (setq mac-command-modifier 'meta)
 
+(setq-default indent-tabs-mode nil)
+
 
 ;;;                   ;;;
 ;;;  Package Manager  ;;;
@@ -31,3 +33,20 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-and-compile
+  (setq use-package-expand-minimally t))
+
+(use-package eglot
+  :ensure t)
+
+(use-package racket-mode
+  :ensure t)
+
+(use-package go-mode
+  :ensure t
+  :mode ("\\.go\\'" . go-mode))
+
