@@ -1,14 +1,13 @@
-
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
 
 (setq inhibit-startup-message t)
 
-(menu-bar-mode -1)            ; Disable the menu bar
+(menu-bar-mode -1)          ; Disable the menu bar
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
-(set-fringe-mode 0)        ; Give some breathing room
+(set-fringe-mode 0)         ; Give some breathing room
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 
@@ -27,6 +26,14 @@
 (setq-default indent-tabs-mode nil)
 
 ;;;                   ;;;
+;;;    Treesitter     ;;;
+;;;                   ;;;
+
+(setq treesit-language-source-alist
+      '((go "https://github.com/tree-sitter/tree-sitter-go")
+        (gomod "https://github.com/camdencheek/tree-sitter-go-mod")))
+
+;;;                   ;;;
 ;;;  Package Manager  ;;;
 ;;;                   ;;;
 
@@ -43,7 +50,7 @@
 (use-package racket-mode
   :ensure t)
 
-(use-package go-mode
+(use-package go-ts-mode
   :ensure t
-  :mode ("\\.go\\'" . go-mode))
+  :mode ("\\.go\\'" . go-ts-mode))
 
