@@ -19,8 +19,6 @@
       scroll-conservatively 10)
 (setq inhibit-startup-message t)
 
-(load-theme 'wombat)
-
 (setq mac-command-modifier 'meta)
 
 (setq-default indent-tabs-mode nil)
@@ -46,6 +44,10 @@
   (package-install 'use-package))
 (eval-and-compile
   (setq use-package-expand-minimally t))
+
+(use-package solarized-theme
+  :ensure t)
+(load-theme 'solarized-dark)
 
 (use-package racket-mode
   :ensure t)
