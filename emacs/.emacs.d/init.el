@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
 
@@ -12,7 +14,7 @@
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 
 (global-display-line-numbers-mode 1)
-        (setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'relative)
 (setq display-line-numbers-type 'relative)
 
 (setq scroll-margin 8
@@ -23,17 +25,7 @@
 
 (setq-default indent-tabs-mode nil)
 
-;;;                   ;;;
-;;;    Treesitter     ;;;
-;;;                   ;;;
-
-(setq treesit-language-source-alist
-      '((go "https://github.com/tree-sitter/tree-sitter-go")
-        (gomod "https://github.com/camdencheek/tree-sitter-go-mod")))
-
-;;;                   ;;;
-;;;  Package Manager  ;;;
-;;;                   ;;;
+;;. Package Manager
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -45,14 +37,28 @@
 (eval-and-compile
   (setq use-package-expand-minimally t))
 
+;;. Themes
+
 (use-package solarized-theme
   :ensure t)
 (load-theme 'solarized-dark)
 
+;;. Eglot
+
+(use-package eglot
+  :ensure t
+  :hook (go-ts-mode . eglot-ensure))
+
+;;. Languages
+
+(use-package treesit-auto
+  :ensure t
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
 (use-package racket-mode
   :ensure t)
-
-(use-package go-ts-mode
-  :ensure t
-  :mode ("\\.go\\'" . go-ts-mode))
 
