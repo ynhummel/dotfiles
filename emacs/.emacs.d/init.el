@@ -3,6 +3,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
 
+;;. Emacs Interface
+
 (setq inhibit-startup-message t)
 
 (menu-bar-mode -1)          ; Disable the menu bar
@@ -11,19 +13,22 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 0)         ; Give some breathing room
 
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
+;;. General editor Preferences
 
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
+(column-number-mode t)
 (global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative)
 (setq display-line-numbers-type 'relative)
 
 (setq scroll-margin 8
       scroll-conservatively 10)
 (setq inhibit-startup-message t)
 
-(setq mac-command-modifier 'meta)
-
 (setq-default indent-tabs-mode nil)
+
+;;. MacOS configs
+
+(setq mac-command-modifier 'meta)
 
 ;;. Package Manager
 
@@ -36,6 +41,11 @@
   (package-install 'use-package))
 (eval-and-compile
   (setq use-package-expand-minimally t))
+
+;;. Terminal
+
+(use-package vterm
+  :ensure t)
 
 ;;. Themes
 
