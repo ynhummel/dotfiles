@@ -121,6 +121,7 @@
 
 ;;. Languages
 
+(setq treesit-extra-load-path '("~/.emacs.d/tree-sitter"))
 (use-package treesit-auto
   :ensure t
   :custom
