@@ -31,9 +31,11 @@
 ;;. General editor Preferences
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
+
 (column-number-mode t)
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
+(add-hook 'vterm-mode-hook (lambda() (display-line-numbers-mode -1)))
 
 (setq scroll-margin 8
       scroll-conservatively 10)
@@ -65,9 +67,20 @@
 
 ;;. Themes
 
+(use-package doom-themes
+  :ensure t
+  :custom
+  ;; Global settings (defaults)
+  (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
+  (doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  :config
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+
 (use-package solarized-theme
   :ensure t)
-(load-theme 'solarized-dark)
+
+(load-theme 'doom-gruvbox t)
 
 ;;. Completion
 
@@ -130,6 +143,8 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-(use-package racket-mode
+(use-package markdown-ts-mode
   :ensure t)
 
+(use-package racket-mode
+  :ensure t)
