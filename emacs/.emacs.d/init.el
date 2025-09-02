@@ -26,7 +26,7 @@
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
-(set-fringe-mode 0)         ; Give some breathing room
+(set-fringe-mode 1)         ; Give some breathing room
 
 ;;. General editor Preferences
 
@@ -36,6 +36,7 @@
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
 (add-hook 'vterm-mode-hook (lambda() (display-line-numbers-mode -1)))
+(setq-default truncate-lines t)
 
 (setq scroll-margin 8
       scroll-conservatively 10)
@@ -126,6 +127,21 @@
   :init
   (vertico-mode))
 
+;;. Git Gutter
+
+(use-package git-gutter
+  :ensure t
+  :hook (prog-mode . git-gutter-mode)
+  :config
+  (setq git-gutter:update-interval 0.02))
+
+(use-package git-gutter-fringe
+  :ensure t
+  :config
+  (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
+
 ;;. Eglot
 
 (use-package eglot
@@ -148,3 +164,10 @@
 
 (use-package racket-mode
   :ensure t)
+
+(use-package go-ts-mode
+  :config
+  (setq go-ts-mode-indent-offset 4)
+  :hook
+  (go-ts-mode . (lambda () (setq tab-width 4)))
+  (after-save . eglot-format))
