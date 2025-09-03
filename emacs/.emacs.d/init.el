@@ -26,7 +26,7 @@
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
-(set-fringe-mode 1)         ; Give some breathing room
+(set-fringe-mode 2)         ; Give some breathing room
 
 ;;. General editor Preferences
 
