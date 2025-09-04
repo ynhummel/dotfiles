@@ -72,3 +72,4 @@ export NVM_DIR="$HOME/.config/nvm"
 
 
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
