@@ -35,7 +35,6 @@
 (column-number-mode t)
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
-(add-hook 'vterm-mode-hook (lambda() (display-line-numbers-mode -1)))
 (setq-default truncate-lines t)
 
 (setq scroll-margin 8
@@ -78,9 +77,6 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
-(use-package solarized-theme
-  :ensure t)
-
 (load-theme 'doom-gruvbox t)
 
 ;;. Completion
@@ -92,7 +88,7 @@
   ;; Optional customizations
   :custom
   (corfu-auto t)
-  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
   ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
   ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
@@ -119,11 +115,11 @@
 
 (use-package vertico
   :ensure t
-  ;; :custom
+  :custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   ;; (vertico-count 20) ;; Show more candidates
   ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
-  ;; (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
+  (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
   :init
   (vertico-mode))
 
