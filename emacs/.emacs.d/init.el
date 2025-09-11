@@ -28,6 +28,9 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 2)         ; Give some breathing room
 
+(set-frame-parameter nil 'alpha-background 95)
+(add-to-list 'default-frame-alist '(alpha-background . 95))
+
 ;;. General editor Preferences
 
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
