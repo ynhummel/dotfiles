@@ -2,6 +2,8 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load-file custom-file)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;;. Emacs Interface
 
