@@ -8,7 +8,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
 
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -48,9 +48,9 @@ require("lazy").setup("plugins")
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Buffer Remaps
-vim.keymap.set("n", "<leader>bn", ":bn<CR>", {})                        -- next buffer
-vim.keymap.set("n", "<leader>bp", ":bp<CR>", {})                        -- previous buffer
-vim.keymap.set("n", "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", {})   -- kill buffer without closing window
+vim.keymap.set("n", "<leader>bn", ":bn<CR>", {}) -- next buffer
+vim.keymap.set("n", "<leader>bp", ":bp<CR>", {}) -- previous buffer
+vim.keymap.set("n", "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", {}) -- kill buffer without closing window
 
 -- Panes remap (work with tmux)
 vim.keymap.set("n", "<C-w>h", "<C-w>s")
@@ -65,4 +65,4 @@ vim.keymap.set("n", "<leader>y", '"+Y')
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme everforest")
