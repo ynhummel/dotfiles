@@ -12,5 +12,11 @@ return {
             local onedark = require("onedark")
             onedark.setup { style = 'dark' }
         end,
-    }
+    },
+	{
+		"neanias/everforest-nvim",
+		lazy = false,
+		priority = 1000,
+		-- opts = { transparent = true },
+	},
 }
