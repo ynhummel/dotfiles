@@ -65,4 +65,7 @@ vim.keymap.set("n", "<leader>y", '"+Y')
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+vim.keymap.set("n", "<leader>tl", ":set background=light<CR>")
+vim.keymap.set("n", "<leader>td", ":set background=dark<CR>")
+
 vim.cmd("colorscheme everforest")

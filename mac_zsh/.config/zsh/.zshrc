@@ -65,12 +65,16 @@ export GOINSTALL="/usr/local/go/bin"
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOINSTALL:$GOPATH/bin
 
+# Set Zig
+export ZIGPATH="$HOME/.zig"
+export PATH="$PATH:$ZIGPATH/zig-aarch64-macos-0.16.0-dev.731+958faa703"
+
 # Set NVM
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
+# Set Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
