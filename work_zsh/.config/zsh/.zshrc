@@ -1,6 +1,8 @@
 # COMPLETION
 source $ZDOTDIR/completions.zsh
 
+plugins=(git kubectl)
+
 #PROMPT
 autoload -Uz vcs_info
 precmd() { vcs_info }
@@ -80,3 +82,5 @@ export NVM_DIR="$HOME/.config/nvm"
 export PHP_INI_SCAN_DIR="/home/yurihummel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 export PATH="$PATH:$PHP_INI_SCAN_DIR"
 
+# ASDF
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

@@ -1,9 +1,9 @@
 return {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    -- config = {
-    --     sections = {
-    --         lualine_x = { "encoding", { "fileformat", symbols = { unix = " " } }, "filetype" },
-    --     },
-    -- },
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = {
+		sections = {
+			lualine_x = { "encoding", { "fileformat" }, "filetype" },
+		},
+	},
 }
