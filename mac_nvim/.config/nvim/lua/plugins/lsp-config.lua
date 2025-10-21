@@ -19,7 +19,7 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			vim.lsp.config("*", { capabilities = capabilities })
 
-            -- Java config
+			-- Java config
 			vim.uv.os_setenv("JAVA_HOME", "/Users/yurihummel/.sdkman/candidates/java/21.0.8-tem")
 			vim.lsp.config("jdtls", {
 				runtimes = {
@@ -32,6 +32,23 @@ return {
 						path = "/Users/yurihummel/.sdkman/candidates/java/21.0.8-tem",
 					},
 				},
+			})
+
+			-- Zig config
+			vim.lsp.config("zls", {
+				cmd = { "/Users/yurihummel/.zig/tools/zls" },
+				filetypes = { "zig", "zon" },
+				root_markers = { { "build.zig" }, ".git" },
+			})
+			vim.lsp.enable("zls")
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = { "*.zig", "*.zon" },
+				callback = function(ev)
+					vim.lsp.buf.code_action({
+						context = { only = { "source.fixAll", "source.organizeImports" } },
+						apply = true,
+					})
+				end,
 			})
 
 			vim.keymap.set("n", "<space>fd", vim.diagnostic.open_float)
