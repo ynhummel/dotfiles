@@ -45,8 +45,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- Nvim Tree
-vim.keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Buffer Remaps
 vim.keymap.set("n", "<leader>bn", ":bn<CR>", {}) -- next buffer
