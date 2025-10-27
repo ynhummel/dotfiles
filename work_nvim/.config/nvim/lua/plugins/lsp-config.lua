@@ -22,6 +22,21 @@ return {
 			-- lspconfig.ruby_lsp.setup({ capabilities = capabilities })
 			-- lspconfig.rubocop.setup({ capabilities = capabilities, cmd = { "bundle", "exec", "rubocop", "--lsp" } })
 
+			-- Java config
+			vim.uv.os_setenv("JAVA_HOME", "/home/yurihummel/.sdkman/candidates/java/21.0.8-tem")
+			vim.lsp.config("jdtls", {
+				runtimes = {
+					{
+						name = "JavaSE-11",
+						path = "/home/yurihummel/.sdkman/candidates/java/11.0.28-tem",
+					},
+					{
+						name = "JavaSE-21",
+						path = "/home/yurihummel/.sdkman/candidates/java/21.0.8-tem",
+					},
+				},
+			})
+
 			vim.keymap.set("n", "<space>fd", vim.diagnostic.open_float)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
