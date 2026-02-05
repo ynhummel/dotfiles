@@ -12,3 +12,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+"C-i" = ":open ~/.config/helix/languages.toml"
