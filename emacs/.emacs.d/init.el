@@ -30,8 +30,8 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 2)         ; Give some breathing room
 
-(set-frame-parameter nil 'alpha-background 95)
-(add-to-list 'default-frame-alist '(alpha-background . 95))
+(set-frame-parameter nil 'alpha-background 99)
+(add-to-list 'default-frame-alist '(alpha-background . 99))
 
 ;;. General editor Preferences
 
@@ -82,7 +82,7 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
-(load-theme 'doom-gruvbox t)
+(load-theme 'doom-solarized-light t)
 
 ;;. Completion
 
@@ -145,14 +145,14 @@
 
 ;;. Eglot
 
-(use-package eglot
-  :ensure t
-  :defer t
-  :hook (go-ts-mode . eglot-ensure))
+;; (use-package eglot
+  ;; :ensure t
+  ;; :defer t
+  ;; :hook (go-ts-mode . eglot-ensure))
 
 ;;. Languages
 
-(setq treesit-extra-load-path '("~/.emacs.d/tree-sitter"))
+(setq treesit-extra-load-path '("~/.emacs.d/tree-sitter/linux"))
 (use-package treesit-auto
   :ensure t
   :custom
@@ -161,18 +161,12 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-(use-package markdown-ts-mode
-  :ensure t)
-
-(use-package racket-mode
-  :ensure t)
-
-(use-package go-ts-mode
-  :config
-  (setq go-ts-mode-indent-offset 4)
-  :hook
-  (go-ts-mode . (lambda () (setq tab-width 4)))
-  (after-save . eglot-format))
+;; (use-package go-ts-mode
+  ;; :config
+  ;; (setq go-ts-mode-indent-offset 4)
+  ;; :hook
+  ;; (go-ts-mode . (lambda () (setq tab-width 4)))
+  ;; (after-save . eglot-format))
 
 (use-package web-mode
   :ensure t

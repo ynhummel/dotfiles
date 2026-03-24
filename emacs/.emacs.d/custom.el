@@ -16,7 +16,7 @@
      "7fea145741b3ca719ae45e6533ad1f49b2a43bf199d9afaee5b6135fd9e6f9b8"
      default))
  '(package-selected-packages
-   '(corfu doom-themes git-gutter git-gutter-fringe racket-mode
+   '(corfu doom-themes git-gutter git-gutter-fringe markdown-mode
            solarized-theme treesit-auto vertico vterm web-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
