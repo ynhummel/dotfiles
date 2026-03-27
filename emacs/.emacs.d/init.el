@@ -143,13 +143,6 @@
   (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 
-;;. Eglot
-
-;; (use-package eglot
-  ;; :ensure t
-  ;; :defer t
-  ;; :hook (go-ts-mode . eglot-ensure))
-
 ;;. Languages
 
 (setq treesit-extra-load-path '("~/.emacs.d/tree-sitter/linux"))
