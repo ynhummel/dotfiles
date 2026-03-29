@@ -43,6 +43,7 @@
 
 (column-number-mode t)
 (global-display-line-numbers-mode 1)
+(setq display-line-numbers-width 4)
 (setq display-line-numbers-type 'relative)
 (setq-default truncate-lines t)
 
@@ -132,14 +133,22 @@
 ;; ORG
 ;---------------------------------------------------------------------------
 (use-package org
+  :hook  (org-mode . (lambda () 
+                       (visual-line-mode 1)
+                       (display-line-numbers-mode -1)))
+  :bind (("C-c l" . org-store-link)
+         ("C-c a" . org-agenda))
   :config
   (setq org-agenda-files '("~/orgfiles/agenda"))
-  (setq org-log-done t)
+  ;; Visual Customization
+  (setq org-adapt-indentation nil)
+  (setq org-startup-indented t)
+  (setq org-hide-leading-stars t)
   (setq org-hide-emphasis-markers t)
-  :hook (org-mode . visual-line-mode))
-
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
+  (setq org-ellipsis " ⌄")  
+  ;; TODO Customization
+  ;; (setq org-log-done t)
+  )
 ;---------------------------------------------------------------------------
 
 ;; GIT
