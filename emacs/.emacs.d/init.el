@@ -33,8 +33,8 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 2)         ; Give some breathing room
 
-(set-frame-parameter nil 'alpha-background 99)
-(add-to-list 'default-frame-alist '(alpha-background . 99))
+;; (set-frame-parameter nil 'alpha-background 99)
+;; (add-to-list 'default-frame-alist '(alpha-background . 99))
 ;---------------------------------------------------------------------------
 
 ;; EDITOR
@@ -134,7 +134,9 @@
 (use-package org
   :config
   (setq org-agenda-files '("~/orgfiles/agenda"))
-  (setq org-log-done t))
+  (setq org-log-done t)
+  (setq org-hide-emphasis-markers t)
+  :hook (org-mode . visual-line-mode))
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -142,7 +144,6 @@
 
 ;; GIT
 ;---------------------------------------------------------------------------
-
 (use-package git-gutter
   :ensure t
   :hook (prog-mode . git-gutter-mode)
@@ -155,7 +156,6 @@
   (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
   (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
-
 ;---------------------------------------------------------------------------
 
 ;; PROGRAMMING LANGUAGES
