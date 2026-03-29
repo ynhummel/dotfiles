@@ -5,8 +5,11 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-;;. Emacs Interface
+(setq mac-command-modifier 'meta) ;MacsOs use command as meta
 
+
+;; INTERFACE
+;---------------------------------------------------------------------------
 (use-package emacs
   :custom
   ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer
@@ -32,9 +35,10 @@
 
 (set-frame-parameter nil 'alpha-background 99)
 (add-to-list 'default-frame-alist '(alpha-background . 99))
+;---------------------------------------------------------------------------
 
-;;. General editor Preferences
-
+;; EDITOR
+;---------------------------------------------------------------------------
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 
 (column-number-mode t)
@@ -47,13 +51,10 @@
 (setq inhibit-startup-message t)
 
 (setq-default indent-tabs-mode nil)
+;---------------------------------------------------------------------------
 
-;;. MacOS configs
-
-(setq mac-command-modifier 'meta)
-
-;;. Package Manager
-
+;; PACKAGES
+;---------------------------------------------------------------------------
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
@@ -64,14 +65,16 @@
   (package-install 'use-package))
 (eval-and-compile
   (setq use-package-expand-minimally t))
+;---------------------------------------------------------------------------
 
-;;. Terminal
+;; TERMINAL
+;---------------------------------------------------------------------------
+;; (use-package vterm
+  ;; :ensure t)
+;---------------------------------------------------------------------------
 
-(use-package vterm
-  :ensure t)
-
-;;. Themes
-
+;; THEMES
+;---------------------------------------------------------------------------
 (use-package doom-themes
   :ensure t
   :custom
@@ -82,12 +85,11 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
-(load-theme 'doom-solarized-light t)
+(load-theme 'doom-dracula t)
+;---------------------------------------------------------------------------
 
-;;. Completion
-
-;;;;. Corfu
-
+;; COMPLETION
+;---------------------------------------------------------------------------
 (use-package corfu
   :ensure t
   ;; Optional customizations
@@ -116,8 +118,6 @@
   ;; (corfu-popupinfo-mode)
   )
 
-;;;;. Vertico
-
 (use-package vertico
   :ensure t
   :custom
@@ -127,8 +127,21 @@
   (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
   :init
   (vertico-mode))
+;---------------------------------------------------------------------------
 
-;;. Git Gutter
+;; ORG
+;---------------------------------------------------------------------------
+(use-package org
+  :config
+  (setq org-agenda-files '("~/orgfiles/agenda"))
+  (setq org-log-done t))
+
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+;---------------------------------------------------------------------------
+
+;; GIT
+;---------------------------------------------------------------------------
 
 (use-package git-gutter
   :ensure t
@@ -143,8 +156,10 @@
   (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 
-;;. Languages
+;---------------------------------------------------------------------------
 
+;; PROGRAMMING LANGUAGES
+;---------------------------------------------------------------------------
 (setq treesit-extra-load-path '("~/.emacs.d/tree-sitter/linux"))
 (use-package treesit-auto
   :ensure t
@@ -172,3 +187,4 @@
    ("\\.erb\\'" . web-mode)
    ("\\.mustache\\'" . web-mode)
    ("\\.djhtml\\'" . web-mode)))
+;---------------------------------------------------------------------------
