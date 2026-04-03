@@ -1,4 +1,4 @@
-typeset -U path
+typeset -U path # avoid duplication in PATH
 
 # export TERM="xterm-256color"
 
@@ -15,6 +15,7 @@ export HISTFILE="$ZDOTDIR/.zsh_history" # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 
+# adding to PATH, (N-/) avoids erroring when directory doesn't exists
 path=(
     "$HOME/bin"(N-/)
     "$HOME/.local/bin"(N-/)

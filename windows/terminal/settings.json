@@ -1,0 +1,84 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
+    "defaultProfile": "{b0a4460b-aecb-51e1-9fca-caeb7636ac30}",
+    "keybindings": [],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
+        [
+            {
+                "colorScheme": "One Half Dark",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe --distribution-id {41f81f93-f368-4581-a8a4-95e5563577c9}",
+                "cursorShape": "filledBox",
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font",
+                    "size": 14
+                },
+                "guid": "{b0a4460b-aecb-51e1-9fca-caeb7636ac30}",
+                "hidden": false,
+                "icon": "C:\\Users\\yurih\\AppData\\Local\\wsl\\{41f81f93-f368-4581-a8a4-95e5563577c9}\\shortcut.ico",
+                "name": "Ubuntu",
+                "padding": "2,2,0,0",
+                "pathTranslationStyle": "wsl",
+                "scrollbarState": "hidden",
+                "source": "Microsoft.WSL",
+                "startingDirectory": "~",
+                "suppressApplicationTitle": true
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "colorScheme": "Dark+",
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64",
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font",
+                    "size": 14
+                },
+                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+                "icon": "C:/msys64/msys2.ico",
+                "name": "MSYS / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
+            },
+            {
+                "guid": "{c8681d9d-4b3a-5a36-b91e-073f0573b98c}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{ce483446-463b-5fb2-95f6-65ec54bce18a}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            }
+        ]
+    },
+    "schemes": [],
+    "themes": [],
+    "useAcrylicInTabRow": true
+}

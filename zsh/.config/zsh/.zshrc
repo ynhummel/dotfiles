@@ -13,6 +13,7 @@ PROMPT='%n@%m %1~ %F{red}${vcs_info_msg_0_}%f%# '
 bindkey -v
 export KEYTIMEOUT=1
 
+# change cursor for normal and insert mode
 cursor_mode() {
     cursor_block='\e[2 q'
     cursor_beam='\e[6 q'
@@ -62,13 +63,13 @@ alias zsource="source ~/.config/zsh/.zshrc"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# SET RUST
+. "$HOME/.cargo/env"
+
 # SET GOLANG
 export GOINSTALL="/usr/local/go/bin"
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOINSTALL:$GOPATH/bin
-
-# SET RUST
-. "$HOME/.cargo/env"
 
 # NVM
 export NVM_DIR="$HOME/.config/nvm"
