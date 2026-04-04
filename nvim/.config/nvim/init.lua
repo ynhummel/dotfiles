@@ -1,8 +1,7 @@
 -- enable 24-bit True Color --
 vim.opt.termguicolors = true
 
-
--- Editor configuration --
+-- Editor configuration ---------------------------------------------------------------------------------------
 vim.opt.nu = true              -- enable line numbers 
 vim.opt.relativenumber = true  -- relative numbering
 vim.opt.signcolumn = "yes:1"   -- separate 1px for sign column
@@ -11,6 +10,8 @@ vim.opt.scrolloff = 8          -- 8 lines context at top and botton
 vim.opt.swapfile = false       -- disable swap files
 vim.opt.backup = false         -- disable backup files
 
+-- Set colorscheme --
+vim.cmd("colorscheme catppuccin")
 
 -- Persistent undo (Unix and Windows compatible)
 local home = os.getenv("HOME") or os.getenv("USERPROFILE") -- find home
@@ -30,21 +31,20 @@ vim.opt.softtabstop = 4   -- columns moved by Tab or Backspace
 vim.opt.shiftwidth = 4    -- spaces used when shifiting blocks
 vim.opt.expandtab = true  -- hiting tabs insert space characters
 
-
 -- Leader Key --
 vim.g.mapleader = " "
+-- --------------------------------------------------------------------------------------------------------
 
-
--- Remaps --
+-- Remaps -------------------------------------------------------------------------------------------------
 
 -- Buffer
 vim.keymap.set("n", "<leader>bn", ":bn<CR>", {}) -- next buffer
 vim.keymap.set("n", "<leader>bp", ":bp<CR>", {}) -- previous buffer
 vim.keymap.set("n", "<leader>bk", ":bp<bar>sp<bar>bn<bar>bd<CR>", {}) -- kill buffer without closing window
 -- System clipboard
-vim.keymap.set("n", "«leader>y", '"+y')
+vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "«leader>p", '"+p')
+vim.keymap.set("n", "<leader>p", '"+p')
 vim.keymap.set("v", "<leader>p", '"+p')
 -- Better scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -52,6 +52,30 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Move blocks of code up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- -------------------------------------------------------------------------------------------------------
 
--- Set colorscheme
-vim.cmd("colorscheme catppuccin")
+
+-- Treesitter --------------------------------------------------------------------------------------------
+vim.pack.add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
+
+-- Hook to package update, if treesiter is updated trigger TSUpdate
+vim.api.nvim_create_autocmd('PackChanged', {
+    callback = function(event)
+        local spec = event.data.spec or {}
+        if spec.url:find('nvim-treesitter') then
+            vim.cmd('TSUpdate')
+        end
+    end,
+}) 
+
+-- local ensure = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "rust", "go" }
+local ensure = { "c", "python", "go" }
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = ensure,
+    callback = function() 
+        vim.treesitter.start()
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end,
+})
+-- -----------------------------------------------------------------------------------------------------

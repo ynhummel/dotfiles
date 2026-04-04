@@ -11,6 +11,7 @@
 - eza (install from cargo.io)
 - bat (install from cargo.io)
 - nvim (build from source)
+- treesiter-cli
 - tmux (install most modern)
 - terminal (ghostty now, will try kitty to avoid tmux)
 
