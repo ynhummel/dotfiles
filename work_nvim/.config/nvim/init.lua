@@ -2,13 +2,15 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- enable 24-bit True Color
 vim.opt.termguicolors = true
 
+-- Line numbers, relative, with signcolumn always visible and width 1px
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
 
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -50,7 +52,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- Buffer Remaps
 vim.keymap.set("n", "<leader>bn", ":bn<CR>", {}) -- next buffer
 vim.keymap.set("n", "<leader>bp", ":bp<CR>", {}) -- previous buffer
-vim.keymap.set("n", "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", {}) -- kill buffer without closing window
+vim.keymap.set("n", "<leader>bk", ":bp<bar>sp<bar>bn<bar>bd<CR>", {}) -- kill buffer without closing window
 
 -- Panes remap (work with tmux)
 vim.keymap.set("n", "<C-w>h", "<C-w>s")
@@ -60,7 +62,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "«leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>y", '"+Y')
+vim.keymap.set("n", "«leader>p", '"+p')
+vim.keymap.set("v", "<leader>p", '"+p')
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
