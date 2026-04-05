@@ -60,6 +60,9 @@ alias vimconf="nvim ~/.config/nvim --cmd 'cd ~/.config/nvim'"
 alias zconf="nvim ~/.config/zsh/.zshrc"
 alias zsource="source ~/.config/zsh/.zshrc"
 
+# HELIX
+export HELIX_RUNTIME=~/src/helix/runtime
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

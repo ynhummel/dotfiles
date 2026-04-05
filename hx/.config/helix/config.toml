@@ -1,9 +1,15 @@
-theme = "everforest_dark"
+theme = "base16_default"
 
 [editor]
 true-color = true
 line-number = "relative"
 bufferline = "multiple"
+end-of-line-diagnostics = "disable"
+gutters = ["line-numbers", "spacer", "diff"]
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
+other-lines = "disable"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -14,4 +20,4 @@ select = "underline"
 hidden = false
 
 [keys.normal]
-"C-i" = ":open ~/.config/helix/languages.toml"
+A-l = ":open ~/.config/helix"

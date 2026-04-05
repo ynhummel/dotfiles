@@ -1,7 +1,7 @@
 # PYTHON
 [[language]]
 name = "python"
-language-servers = [ "ruff", "basedpyright" ]
+language-servers = [ "basedpyright", { name = "ruff", except-features = ["diagnostics"] } ]
 auto-format = true
 
 # MARKDOWN

@@ -36,7 +36,6 @@ vim.g.mapleader = " "
 -- --------------------------------------------------------------------------------------------------------
 
 -- Remaps -------------------------------------------------------------------------------------------------
-
 -- Buffer
 vim.keymap.set("n", "<leader>bn", ":bn<CR>", {}) -- next buffer
 vim.keymap.set("n", "<leader>bp", ":bp<CR>", {}) -- previous buffer
@@ -54,28 +53,3 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- -------------------------------------------------------------------------------------------------------
 
-
--- Treesitter --------------------------------------------------------------------------------------------
-vim.pack.add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
-
--- Hook to package update, if treesiter is updated trigger TSUpdate
-vim.api.nvim_create_autocmd('PackChanged', {
-    callback = function(event)
-        local spec = event.data.spec or {}
-        if spec.url:find('nvim-treesitter') then
-            vim.cmd('TSUpdate')
-        end
-    end,
-}) 
-
--- local ensure = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "rust", "go" }
-local ensure = { "c", "python", "go" }
-
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = ensure,
-    callback = function() 
-        vim.treesitter.start()
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    end,
-})
--- -----------------------------------------------------------------------------------------------------
