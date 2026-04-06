@@ -59,9 +59,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 
 # config alias
-alias vimconf="nvim ~/.config/nvim --cmd 'cd ~/.config/nvim'"
-# alias termconf="nvim ~/.config/alacritty/alacritty.toml"
-alias zconf="nvim ~/.config/zsh/.zshrc"
+alias vimconf="vim ~/.config/nvim --cmd 'cd ~/.config/nvim'"
+alias hxconf="hx ~/.config/helix"
+alias termconf="hx ~/.config/wezterm/wezterm.lua"
+alias zconf="hx ~/.config/zsh/.zshrc"
 alias zsource="source ~/.config/zsh/.zshrc"
 
 # HELIX
@@ -92,3 +93,5 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+. "$HOME/.config/local/share/../bin/env"
