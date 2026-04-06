@@ -1,5 +1,6 @@
-# ZSHENV 
-export TERM="xterm-256color"
+typeset -U path # avoid duplication in PATH
+
+# export TERM="xterm-256color"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
@@ -13,7 +14,12 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$ZDOTDIR/.zsh_history" # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
-. "$HOME/.cargo/env"
-export PATH=~/bin:$PATH
 
-. "$HOME/.local/bin/env"
+# adding to PATH, (N-/) avoids erroring when directory doesn't exists
+path=(
+    "$HOME/bin"(N-/)
+    "$HOME/.local/bin"(N-/)
+    $path
+)
+
+export PATH
