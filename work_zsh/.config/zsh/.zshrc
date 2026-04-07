@@ -42,7 +42,7 @@ cursor_mode
 
 
 # ========== ALIASES ==========
-alias zl="zellij"
+alias zj="zellij"
 alias vim="nvim"
 alias docom="docker compose"
 
@@ -95,4 +95,4 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-. "$HOME/.config/local/share/../bin/env"
+# . "$HOME/.config/local/share/../bin/env"
