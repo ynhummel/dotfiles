@@ -5,7 +5,7 @@ true-color = true
 line-number = "relative"
 bufferline = "multiple"
 end-of-line-diagnostics = "disable"
-gutters = ["line-numbers", "spacer", "diff"]
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
 
 [editor.inline-diagnostics]
 cursor-line = "disable"

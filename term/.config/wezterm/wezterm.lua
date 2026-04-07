@@ -4,6 +4,8 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config.term = "wezterm"
+
 -- Terminal Appearence
 config.color_scheme = 'Kanagawa (Gogh)'
 config.window_decorations = "TITLE"

@@ -1,6 +1,6 @@
 typeset -U path # avoid duplication in PATH
 
-# export TERM="xterm-256color"
+export TERM="wezterm"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
