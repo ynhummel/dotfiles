@@ -42,7 +42,7 @@ cursor_mode
 
 
 # ========== ALIASES ==========
-alias zj="zellij"
+alias zl="zellij"
 alias vim="nvim"
 alias docom="docker compose"
 
