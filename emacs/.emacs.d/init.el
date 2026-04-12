@@ -11,8 +11,7 @@
 ;---------------------------------------------------------------------------
 (use-package emacs
   :custom
-  ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer
-  ;; to switch display modes.
+  ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer to switch display modes.
   (context-menu-mode t)
   ;; Support opening new minibuffers from inside existing minibuffers.
   (enable-recursive-minibuffers t)
@@ -179,35 +178,6 @@
 
 ;; COMPLETION
 ;---------------------------------------------------------------------------
-
-;; (use-package corfu
-;;   :ensure t
-;;   ;; Optional customizations
-;;   :custom
-;;   (corfu-auto t)
-;;   (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-;;   ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
-;;   ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
-;;   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
-;;   ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
-;;   ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
-
-;;   ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
-;;   ;; :hook ((prog-mode . corfu-mode)
-;;   ;;        (shell-mode . corfu-mode)
-;;   ;;        (eshell-mode . corfu-mode))
-
-  ;; :init
-  ;; ;; Recommended: Enable Corfu globally.  Recommended since many modes provide
-  ;; ;; Capfs and Dabbrev can be used globally (M-/).  See also the customization
-  ;; ;; variable `global-corfu-modes' to exclude certain modes.
-  ;; (global-corfu-mode)
-
-  ;; Enable optional extension modes:
-  ;; (corfu-history-mode)
-  ;; (corfu-popupinfo-mode)
-;; )
-
 (use-package completion-preview
   :ensure nil
   :hook (prog-mode . completion-preview-mode)
