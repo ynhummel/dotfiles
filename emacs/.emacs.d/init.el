@@ -236,23 +236,6 @@
 
 ;; PROGRAMMING LANGUAGES
 ;---------------------------------------------------------------------------
-
-; (setq treesit-extra-load-path '("~/.emacs.d/tree-sitter/linux"))
-; (use-package treesit-auto
-;   :ensure t
-;   :custom
-;   (treesit-auto-install 'prompt)
-;   :config
-;   (treesit-auto-add-to-auto-mode-alist 'all)
-;   (global-treesit-auto-mode))
-
-;; (use-package go-ts-mode
-  ;; :config
-  ;; (setq go-ts-mode-indent-offset 4)
-  ;; :hook
-  ;; (go-ts-mode . (lambda () (setq tab-width 4)))
-  ;; (after-save . eglot-format))
-
 (use-package web-mode
   :ensure t
   :mode
