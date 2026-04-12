@@ -10,7 +10,12 @@ config.term = "wezterm"
 config.color_scheme = 'Kanagawa (Gogh)'
 config.window_decorations = "TITLE"
 config.window_background_opacity = 0.94
+
+-- Tab Bar
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
+
 config.window_padding = {
   left = 0,
   right = 0,
@@ -20,7 +25,11 @@ config.window_padding = {
 
 -- Font
 config.font_size = 14
-config.font = wezterm.font "JetBrainsMono Nerd Font"
+config.font = wezterm.font("JetBrainsMono Nerd Font", {
+  weight = "Regular",
+  stretch = "Normal",
+  style = "Normal"
+})
 
 -- Disable keybinds
 -- config.disable_default_key_bindings = true

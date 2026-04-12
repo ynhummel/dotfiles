@@ -17,7 +17,7 @@
      default))
  '(package-selected-packages
    '(corfu doom-themes git-gutter git-gutter-fringe markdown-mode
-           solarized-theme treesit-auto vertico vterm web-mode)))
+           vertico web-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

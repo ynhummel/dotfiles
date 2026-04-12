@@ -33,8 +33,8 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 2)         ; Give some breathing room
 
-;; (set-frame-parameter nil 'alpha-background 99)
-;; (add-to-list 'default-frame-alist '(alpha-background . 99))
+(set-frame-parameter nil 'alpha-background 94)
+(add-to-list 'default-frame-alist '(alpha-background . 94))
 ;---------------------------------------------------------------------------
 
 ;; EDITOR
@@ -66,12 +66,6 @@
   (package-install 'use-package))
 (eval-and-compile
   (setq use-package-expand-minimally t))
-;---------------------------------------------------------------------------
-
-;; TERMINAL
-;---------------------------------------------------------------------------
-;; (use-package vterm
-  ;; :ensure t)
 ;---------------------------------------------------------------------------
 
 ;; THEMES
@@ -169,14 +163,15 @@
 
 ;; PROGRAMMING LANGUAGES
 ;---------------------------------------------------------------------------
-(setq treesit-extra-load-path '("~/.emacs.d/tree-sitter/linux"))
-(use-package treesit-auto
-  :ensure t
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
+
+; (setq treesit-extra-load-path '("~/.emacs.d/tree-sitter/linux"))
+; (use-package treesit-auto
+;   :ensure t
+;   :custom
+;   (treesit-auto-install 'prompt)
+;   :config
+;   (treesit-auto-add-to-auto-mode-alist 'all)
+;   (global-treesit-auto-mode))
 
 ;; (use-package go-ts-mode
   ;; :config
