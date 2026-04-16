@@ -4,3 +4,7 @@
 # Ignore zsh history files
 **/.zsh_history
 **/.zsh_sessions/
+
+# Desativados pois não estão em uso
+**/nvim
+**/tmux

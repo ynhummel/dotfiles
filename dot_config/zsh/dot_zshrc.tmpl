@@ -51,7 +51,7 @@ export PATH=$PATH:$GOINSTALL:$GOPATH/bin
 # NVM
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
+{{ if eq .chezmoi.hostname "FT-BRJ530W0GV" }}
 # Set PHP
 export PHP_INI_SCAN_DIR="/home/yurihummel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 export PATH="$PATH:$PHP_INI_SCAN_DIR"
@@ -62,3 +62,4 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+{{ end }}
