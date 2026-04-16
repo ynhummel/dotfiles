@@ -1,0 +1,25 @@
+typeset -U path # avoid duplication in PATH
+
+export TERM="alacritty" # using alacritty as term
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
+export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
+
+export EDITOR="hx"
+export VISUAL="hx"
+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+export HISTFILE="$ZDOTDIR/.zsh_history" # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+
+# adding to PATH, (N-/) avoids erroring when directory doesn't exists
+path=(
+    "$HOME/bin"(N-/)
+    "$HOME/.local/bin"(N-/)
+    $path
+)
+
+export PATH
