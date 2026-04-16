@@ -1,0 +1,64 @@
+# COMPLETION
+source $ZDOTDIR/completions.zsh
+
+#PROMPT
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+
+setopt PROMPT_SUBST
+PROMPT='%n@%m %1~ %F{red}${vcs_info_msg_0_}%f%# '
+
+# ========== ALIASES ==========
+alias zl="zellij"
+alias vim="nvim"
+alias docom="docker compose"
+
+# Lazy
+alias lzd="lazydocker"
+alias lzg="lazygit"
+
+# Git Alias
+alias gs="git status"
+
+# Tools
+alias cat='bat'
+alias ls='eza'
+alias ll='ls -alF'
+alias la='ls -A'
+
+# config alias
+alias vimconf="vim ~/.config/nvim --cmd 'cd ~/.config/nvim'"
+alias hxconf="hx ~/.config/helix"
+alias termconf="hx ~/.config/wezterm/wezterm.lua"
+alias zconf="hx ~/.config/zsh/.zshrc"
+alias zsource="source ~/.config/zsh/.zshrc"
+
+# HELIX
+export HELIX_RUNTIME=~/src/helix/runtime
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# SET RUST
+. "$HOME/.cargo/env"
+
+# SET GOLANG
+export GOINSTALL="/usr/local/go/bin"
+export GOPATH="$HOME/go"
+export PATH=$PATH:$GOINSTALL:$GOPATH/bin
+
+# NVM
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Set PHP
+export PHP_INI_SCAN_DIR="/home/yurihummel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+export PATH="$PATH:$PHP_INI_SCAN_DIR"
+
+# ASDF
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

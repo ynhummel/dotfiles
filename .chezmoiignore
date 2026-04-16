@@ -1,0 +1,6 @@
+# Ignore zsh completion dump files
+**/.zcompdump*
+
+# Ignore zsh history files
+**/.zsh_history
+**/.zsh_sessions/

@@ -1,0 +1,23 @@
+theme = "kanagawa_t"
+
+[editor]
+true-color = true
+line-number = "relative"
+bufferline = "multiple"
+end-of-line-diagnostics = "disable"
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
+other-lines = "disable"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+A-l = ":open ~/.config/helix"
