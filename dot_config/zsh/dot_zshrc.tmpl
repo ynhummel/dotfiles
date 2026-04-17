@@ -9,6 +9,8 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%n@%m %1~ %F{red}${vcs_info_msg_0_}%f%# '
 
+eval "$(zoxide init zsh)"
+
 # ========== ALIASES ==========
 
 alias zl="zellij"

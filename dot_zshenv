@@ -6,6 +6,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 
+# Zoxide
+export _ZO_ECHO=1
+export _ZO_DATA_DIR=~/.local/share/zoxide
+export _ZO_RESOLVE_SYMLINKS=1
+
 export EDITOR="hx"
 export VISUAL="hx"
 
