@@ -433,7 +433,7 @@ pane_frames false
 // (Requires restart)
 // Default: true
 // 
-// styled_underlines false
+styled_underlines false
  
 // How often in seconds sessions are serialized
 // 

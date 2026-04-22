@@ -29,8 +29,8 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 2)         ; Give some breathing room
 
-(set-frame-parameter nil 'alpha-background 94)
-(add-to-list 'default-frame-alist '(alpha-background . 94))
+(set-frame-parameter nil 'alpha-background 92)
+(add-to-list 'default-frame-alist '(alpha-background . 92))
 ;---------------------------------------------------------------------------
 
 ;EDITOR
@@ -66,10 +66,8 @@
 
 ;THEMES
 ;---------------------------------------------------------------------------
-(use-package kanagawa-themes
-  :ensure t)
-
-(load-theme 'kanagawa-wave t)
+(load-theme 'modus-vivendi-tinted t)
+(setq modus-themes-to-toggle '(modus-vivendi-tinted modus-operandi-tinted))
 ;---------------------------------------------------------------------------
 
 ;COMPLETION

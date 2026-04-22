@@ -1,4 +1,4 @@
-theme = "kanagawa_t"
+theme = "t_modus_vivendi_tinted"
 
 [editor]
 true-color = true
@@ -21,3 +21,8 @@ hidden = false
 
 [keys.normal]
 A-l = ":open ~/.config/helix"
+
+[keys.normal.space.t]
+"1" = ":theme t_modus_vivendi_tinted"
+"2" = ":theme modus_vivendi_tinted"
+"3" = ":theme modus_operandi_tinted"
