@@ -26,3 +26,6 @@ A-l = ":open ~/.config/helix"
 "1" = ":theme t_modus_vivendi_tinted"
 "2" = ":theme modus_vivendi_tinted"
 "3" = ":theme modus_operandi_tinted"
+
+[keys.insert]
+"C-[" = "normal_mode"
