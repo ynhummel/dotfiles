@@ -1,4 +1,4 @@
-theme = "t_modus_vivendi_tinted"
+theme = "kanagawa_t"
 
 [editor]
 true-color = true
@@ -18,14 +18,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
-[keys.normal]
-A-l = ":open ~/.config/helix"
-
-[keys.normal.space.t]
-"1" = ":theme t_modus_vivendi_tinted"
-"2" = ":theme modus_vivendi_tinted"
-"3" = ":theme modus_operandi_tinted"
 
 [keys.insert]
 "C-[" = "normal_mode"
