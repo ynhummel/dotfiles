@@ -1,4 +1,4 @@
-theme = "t_modus_vivendi_tinted"
+theme = "tokyonight"
 
 [editor]
 true-color = true
