@@ -47,6 +47,12 @@ args = ["--theme", "tokyonight", "--enable-emoji", "--no-auto"]
 name = "json"
 auto-format = false
 
+# YAML
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+
+# GO
 [[language]]
 name = "go"
 language-servers = [ "gopls", "scls" ]
