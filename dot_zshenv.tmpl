@@ -31,3 +31,6 @@ export PATH
 {{ if eq .chezmoi.hostname "fedora" }}
 if [ -e /home/ynhummel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ynhummel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 {{ end }}
+
+# uv
+export PATH="/home/ynhummel/.config/local/share/../bin:$PATH"
