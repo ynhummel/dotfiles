@@ -9,42 +9,17 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%n@%m %1~ %F{red}${vcs_info_msg_0_}%f%# '
 
-# VIM MODE
-bindkey -v
-export KEYTIMEOUT=1
-
-# change cursor for normal and insert mode
-cursor_mode() {
-    cursor_block='\e[2 q'
-    cursor_beam='\e[6 q'
-
-    function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] ||
-            [[ $1 = 'block' ]]; then
-            echo -ne $cursor_block
-        elif [[ ${KEYMAP} == main ]] ||
-            [[ ${KEYMAP} == viins ]] ||
-            [[ ${KEYMAP} = '' ]] ||
-            [[ $1 = 'beam' ]]; then
-            echo -ne $cursor_beam
-        fi
-    }
-
-    zle-line-init() {
-        echo -ne $cursor_beam
-    }
-
-    zle -N zle-keymap-select
-    zle -N zle-line-init
-}
-
-cursor_mode
-
+eval "$(zoxide init zsh)"
 
 # ========== ALIASES ==========
+
 alias zl="zellij"
 alias vim="nvim"
 alias docom="docker compose"
+alias cat='bat'
+alias ls='eza'
+alias ll='ls -al'
+alias la='ls -A'
 
 # Lazy
 alias lzd="lazydocker"
@@ -53,18 +28,14 @@ alias lzg="lazygit"
 # Git Alias
 alias gs="git status"
 
-# Tools
-alias cat='bat'
-alias ls='eza'
-alias ll='ls -alF'
-alias la='ls -A'
-
 # config alias
-alias vimconf="vim ~/.config/nvim --cmd 'cd ~/.config/nvim'"
-alias hxconf="hx ~/.config/helix"
-alias termconf="hx ~/.config/wezterm/wezterm.lua"
-alias zconf="hx ~/.config/zsh/.zshrc"
-alias zsource="source ~/.config/zsh/.zshrc"
+alias chz="chezmoi"
+alias hxconf="chezmoi edit ~/.config/helix"
+alias termconf="chezmoi edit ~/.config/alacritty/alacritty.toml"
+alias zconf="chezmoi edit ~/.config/zsh/.zshrc"
+alias econf="chezmoi edit ~/.zshenv"
+alias zsource="source ~/.config/zsh/.zshrc && source ~/.zshenv"
+alias niriconf="chezmoi edit ~/.config/niri/config.kdl"
 
 # HELIX
 export HELIX_RUNTIME=~/src/helix/runtime
@@ -94,5 +65,3 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# . "$HOME/.config/local/share/../bin/env"

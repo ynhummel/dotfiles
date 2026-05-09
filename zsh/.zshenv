@@ -1,10 +1,13 @@
 typeset -U path # avoid duplication in PATH
 
-# export TERM="xterm-256color"
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
+
+# Zoxide
+export _ZO_ECHO=1
+export _ZO_DATA_DIR=~/.local/share/zoxide
+export _ZO_RESOLVE_SYMLINKS=1
 
 export EDITOR="hx"
 export VISUAL="hx"
@@ -23,3 +26,8 @@ path=(
 )
 
 export PATH
+
+# if [ -e /home/ynhummel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ynhummel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# uv
+export PATH="/home/ynhummel/.config/local/share/../bin:$PATH"
