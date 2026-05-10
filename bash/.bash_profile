@@ -25,6 +25,7 @@ export HISTFILESIZE=10000
 
 # Tools Environment
 export SDKMAN_DIR="$HOME/.sdkman"
+export HELIX_RUNTIME=~/src/helix/runtime
 
 # PATH Construction
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
