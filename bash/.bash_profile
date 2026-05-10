@@ -24,14 +24,26 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000 
 
 # Tools Environment
+export GOPATH="$HOME/go"
+export GOINSTALL="/usr/local/go/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 export HELIX_RUNTIME=~/src/helix/runtime
+export NVM_DIR="$HOME/.config/nvm"
 
 # PATH Construction
+# prepend
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -d "$HOME/.config/local/bin" ] && PATH="$HOME/.config/local/bin:$PATH" # uv path
+
+# append
+[ -d "$GOPATH" ] && PATH="$PATH:$GOPATH"
+[ -d "$GOINSTALL" ] && PATH="$PATH:$GOINSTALL"
+
+# script
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
 export PATH
 
+# Initialize shell
 [[ -f ~/.bashrc ]] && . ~/.bashrc
