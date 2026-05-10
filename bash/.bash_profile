@@ -24,10 +24,9 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000 
 
 # Tools Environment
+export HELIX_RUNTIME=~/src/helix/runtime
 export GOPATH="$HOME/go"
 export GOINSTALL="/usr/local/go/bin"
-export SDKMAN_DIR="$HOME/.sdkman"
-export HELIX_RUNTIME=~/src/helix/runtime
 export NVM_DIR="$HOME/.config/nvm"
 
 # PATH Construction

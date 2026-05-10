@@ -102,5 +102,4 @@ fi
 # Initialize tools
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(zoxide init bash)"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
