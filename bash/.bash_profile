@@ -36,8 +36,8 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -d "$HOME/.config/local/bin" ] && PATH="$HOME/.config/local/bin:$PATH" # uv path
 
 # append
-[ -d "$GOPATH" ] && PATH="$PATH:$GOPATH"
 [ -d "$GOINSTALL" ] && PATH="$PATH:$GOINSTALL"
+[ -d "$GOPATH/bin" ] && PATH="$PATH:$GOPATH/bin"
 
 # script
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
