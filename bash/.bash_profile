@@ -28,6 +28,7 @@ export HELIX_RUNTIME=~/src/helix/runtime
 export GOPATH="$HOME/go"
 export GOINSTALL="/usr/local/go/bin"
 export NVM_DIR="$HOME/.config/nvm"
+[ -d "$HOME/.nix-profile/share" ] && export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 
 # PATH Construction
 # prepend
@@ -41,6 +42,7 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # script
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+[ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ] && . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 export PATH
 
