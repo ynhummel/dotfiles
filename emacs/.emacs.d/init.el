@@ -4,22 +4,24 @@
 (load-file custom-file)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq use-package-always-ensure nil)
 
 ;INTERFACE
 ;---------------------------------------------------------------------------
 (use-package emacs
-  :custom
+  ;; :custom
   ;; Enable context menu. `vertico-multiform-mode' adds a menu in the minibuffer to switch display modes.
-  (context-menu-mode t)
+  ;; (context-menu-mode t)
   ;; Support opening new minibuffers from inside existing minibuffers.
-  (enable-recursive-minibuffers t)
+  ;; (enable-recursive-minibuffers t)
   ;; Hide commands in M-x which do not work in the current mode.  Vertico
   ;; commands are hidden in normal buffers. This setting is useful beyond
   ;; Vertico.
-  (read-extended-command-predicate #'command-completion-default-include-p)
+  ;; (read-extended-command-predicate #'command-completion-default-include-p)
   ;; Do not allow the cursor in the minibuffer prompt
-  (minibuffer-prompt-properties
-   '(read-only t cursor-intangible t face minibuffer-prompt)))
+  ;; (minibuffer-prompt-properties
+   ;; '(read-only t cursor-intangible t face minibuffer-prompt))
+  )
 
 (setq inhibit-startup-message t)
 
@@ -29,8 +31,8 @@
 (tooltip-mode -1)           ; Disable tooltips
 (set-fringe-mode 2)         ; Give some breathing room
 
-(set-frame-parameter nil 'alpha-background 92)
-(add-to-list 'default-frame-alist '(alpha-background . 92))
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 ;---------------------------------------------------------------------------
 
 ;EDITOR
@@ -52,43 +54,43 @@
 
 ;PACKAGES
 ;---------------------------------------------------------------------------
-(require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
+;; (require 'package)
+;; (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+;;                          ("elpa" . "https://elpa.gnu.org/packages/")))
+;; (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(eval-and-compile
-  (setq use-package-expand-minimally t))
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package))
+;; (eval-and-compile
+;;   (setq use-package-expand-minimally t))
 ;---------------------------------------------------------------------------
 
 ;THEMES
 ;---------------------------------------------------------------------------
-(load-theme 'modus-vivendi-tinted t)
-(setq modus-themes-to-toggle '(modus-vivendi-tinted modus-operandi-tinted))
+(load-theme 'modus-vivendi t)
+;; (setq modus-themes-to-toggle '(modus-vivendi-tinted modus-operandi-tinted))
 ;---------------------------------------------------------------------------
 
 ;COMPLETION
 ;---------------------------------------------------------------------------
-(use-package completion-preview
-  :ensure nil
-  :hook (prog-mode . completion-preview-mode)
-  :bind
-  ( :map completion-preview-active-mode-map
-    ("M-n" . completion-preview-next-candidate)
-    ("M-p" . completion-preview-prev-candidate)))
+;; (use-package completion-preview
+;;   :ensure nil
+;;   :hook (prog-mode . completion-preview-mode)
+;;   :bind
+;;   ( :map completion-preview-active-mode-map
+;;     ("M-n" . completion-preview-next-candidate)
+;;     ("M-p" . completion-preview-prev-candidate)))
 
-(use-package vertico
-  :ensure t
-  :custom
-  ;; (vertico-scroll-margin 0) ;; Different scroll margin
-  ;; (vertico-count 20) ;; Show more candidates
-  ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
-  (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
-  :init
-  (vertico-mode))
+;; (use-package vertico
+;;   :ensure t
+;;   :custom
+;;   ;; (vertico-scroll-margin 0) ;; Different scroll margin
+;;   ;; (vertico-count 20) ;; Show more candidates
+;;   ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
+;;   (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
+;;   :init
+;;   (vertico-mode))
 ;---------------------------------------------------------------------------
 
 ;ORG
@@ -109,18 +111,18 @@
 
 ;GIT
 ;---------------------------------------------------------------------------
-(use-package git-gutter
-  :ensure t
-  :hook (prog-mode . git-gutter-mode)
-  :config
-  (setq git-gutter:update-interval 0.02))
+;; (use-package git-gutter
+;;   :ensure t
+;;   :hook (prog-mode . git-gutter-mode)
+;;   :config
+;;   (setq git-gutter:update-interval 0.02))
 
-(use-package git-gutter-fringe
-  :ensure t
-  :config
-  (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
-  (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
-  (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
+;; (use-package git-gutter-fringe
+;;   :ensure t
+;;   :config
+;;   (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+;;   (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+;;   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 ;---------------------------------------------------------------------------
 
 ;PROGRAMMING LANGUAGES
