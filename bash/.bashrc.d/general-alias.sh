@@ -1,6 +1,6 @@
 # Bash
-alias bsrc='source $HOME/.bashrc'
-alias psrc='source $HOME/.bash_profile'
+alias bsource='source $HOME/.bashrc'
+alias psource='source $HOME/.bash_profile'
 alias srf='stow -R --no-folding'
 
 # Add an "alert" alias for long running commands.  Use like so:
