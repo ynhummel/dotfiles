@@ -1,11 +1,7 @@
 if command -v git &> /dev/null; then
+    [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
+
+    alias g='git'
+    __git_complete g __git_main
     alias gs='git status'
-    alias gsw='git switch'
-    alias gnb='git checkout -b'
-    alias gp='git pull'
-    alias gpcurr='git push origin "$(git branch --show-current)"'
-    alias grb='git rebase'
-    alias ga='git add'
-    alias gaa='git add .'
-    alias gcm='git commit -m'
 fi
