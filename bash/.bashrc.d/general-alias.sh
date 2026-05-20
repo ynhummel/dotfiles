@@ -30,3 +30,7 @@ if command -v bat &> /dev/null; then
     alias cat='bat'
     alias catp='bat --plain'
 fi
+
+# Some programs
+alias lzd='lazydocker'
+alias docom='docker compose'
