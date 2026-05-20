@@ -39,21 +39,24 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# Fetch Git branch
+PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
+
+# Check If its Running in a SSH session
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    SSH_PROMPT='\[\033[01;32m\]\u@\h\[\033[00m\]:'
+    NO_COLOR_SSH_PROMPT='\u@\h:'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    SSH_PROMPT=''
+fi
+
+# Make Prompt
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}${SSH_PROMPT}\[\e[34;1m\]\w\[\e[0;91m\]${PS1_CMD1:+ ($PS1_CMD1)}\[\e[0m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}${NO_COLOR_SSH_PROMPT}\w${PS1_CMD1:+ ($PS1_CMD1)}\$ '
 fi
 unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
