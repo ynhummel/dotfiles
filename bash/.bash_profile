@@ -13,7 +13,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state" # A newer addition for log files/history
 
 # Zoxide Configuration
-export _ZO_ECHO=1
+export _ZO_ECHO=0
 export _ZO_DATA_DIR="$HOME/.local/share/zoxide"
 export _ZO_RESOLVE_SYMLINKS=1
 

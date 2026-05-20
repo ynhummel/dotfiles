@@ -52,9 +52,9 @@ fi
 
 # Make Prompt
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}${SSH_PROMPT}\[\e[34;1m\]\w\[\e[0;91m\]${PS1_CMD1:+ ($PS1_CMD1)}\[\e[0m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}${SSH_PROMPT}\[\e[34;1m\]\w\[\e[0;91m\]${PS1_CMD1:+ ($PS1_CMD1)}\[\e[0m\]\n\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}${NO_COLOR_SSH_PROMPT}\w${PS1_CMD1:+ ($PS1_CMD1)}\$ '
+    PS1='${debian_chroot:+($debian_chroot)}${NO_COLOR_SSH_PROMPT}\w${PS1_CMD1:+ ($PS1_CMD1)}\n\$ '
 fi
 unset color_prompt force_color_prompt
 
