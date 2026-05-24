@@ -2,7 +2,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.term = "xterm-256color"
+-- config.term = "xterm-256color"
+config.term = "wezterm"
 config.enable_wayland = false
 
 -- Terminal Appearence

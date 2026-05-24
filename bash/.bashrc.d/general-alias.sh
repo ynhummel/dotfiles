@@ -25,7 +25,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Cat alias
-
 if command -v bat &> /dev/null; then
     alias cat='bat'
     alias catp='bat --plain'
@@ -34,3 +33,11 @@ fi
 # Some programs
 alias lzd='lazydocker'
 alias docom='docker compose'
+
+# EMACS
+alias ec="emacsclient -c -n -a \"\""
+alias et="emacsclient -t -a \"\""
+
+# Special Folders
+alias org="et $HOME/orgfiles"
+alias dot="$EDITOR $HOME/dotfiles"
