@@ -88,7 +88,7 @@ config.mouse_bindings = {
 
 -- Keybinds
 config.keys = {
-  { key = 'Enter', mods = 'ALT', action = act.ToggleFullScreen },
+  { key = 'F11', mods = '', action = act.ToggleFullScreen },
   -- PANES
   { key = '\"', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
   { key = '%', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },

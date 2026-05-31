@@ -31,6 +31,9 @@
   (enable-recursive-minibuffers t)
   (minibuffer-depth-indicate-mode 1)
 
+  ;; Treesitter
+  (treesit-font-lock-level 4)
+
   :config
   ;; UI Elements
   (menu-bar-mode -1)       ; Disable the menu bar
@@ -47,13 +50,22 @@
   ;; Fonts and Transparency
   (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
   (set-frame-parameter nil 'alpha-background 90)
-  (add-to-list 'default-frame-alist '(alpha-background . 90)))
+  (add-to-list 'default-frame-alist '(alpha-background . 90))
+
+  ;; Terminal transparency
+  (defvar my/saved-terminal-bg nil)
+  (defun my/toggle-terminal-transparency ()
+    (interactive)
+    (unless (display-graphic-p)
+      (if (string= (face-background 'default) "unspecified-bg")
+          (set-face-background 'default (or my/saved-terminal-bg "black"))
+        (setq my/saved-terminal-bg (face-background 'default))
+        (set-face-background 'default "unspecified-bg")))))
 
 ;;---------------------------------------------------------------------------
 ;; THEMES
 ;;---------------------------------------------------------------------------
-;; MODUS
-(load-theme 'modus-vivendi-tinted t)
+(load-theme 'modus-vivendi t)
 
 ;;---------------------------------------------------------------------------
 ;; COMPLETION
@@ -81,3 +93,30 @@
   (setq org-hide-leading-stars t)
   (setq org-hide-emphasis-markers t)
   (setq org-ellipsis " ⌄"))
+
+;;---------------------------------------------------------------------------
+;; Treesiter
+;;---------------------------------------------------------------------------
+(setq major-mode-remap-alist
+      '((python-mode        . python-ts-mode)
+        (bash-mode          . bash-ts-mode)
+        (lua-mode           . lua-ts-mode)
+        (c-mode             . c-ts-mode)
+        (c++-mode           . c++-ts-mode)
+        (go-mode            . go-ts-mode)
+        (js-mode            . js-ts-mode)
+        (typescript-mode    . typescript-ts-mode)
+        (json-mode          . json-ts-mode)
+        (yaml-mode          . yaml-ts-mode)
+        ))
+
+;;---------------------------------------------------------------------------
+;; Languages
+;;---------------------------------------------------------------------------
+(use-package yaml-ts-mode
+  :mode "\\.ya?ml\\'"
+  :custom
+  (yaml-indent0offset 2))
+
+(use-package nix-ts-mode
+  :mode "\\.nix\\'")
