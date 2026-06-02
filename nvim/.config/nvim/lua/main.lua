@@ -7,18 +7,21 @@ local opt = vim.opt
 opt.termguicolors = true
 opt.nu = true
 opt.relativenumber = true
-opt.signcolumn = "yes:1" -- separate 1px for sign column
+opt.signcolumn = "yes:1" -- 1px for sign column
 
 opt.wrap = false
 opt.scrolloff = 8
 opt.splitright = true
 opt.splitbelow = true
 
+-- set colorscheme
+vim.cmd('colorscheme default')
+
 -- Tab Options
-opt.tabstop = 8      -- Visual \t width
-opt.softtabstop = 4  -- <Tab> and <BS> keys space inserted 
-opt.shiftwidth = 4   -- auto-indentation width
-opt.expandtab = true -- insert space characters instead of tabs
+opt.tabstop = 8      -- \t size
+opt.softtabstop = 4  -- <Tab> and <BS> keys size
+opt.shiftwidth = 4   -- indentation width
+opt.expandtab = true -- spaces instead of tabs
 
 -- Swap and backup
 opt.swapfile = false
@@ -29,7 +32,7 @@ local home = os.getenv("HOME") or os.getenv("USERPROFILE")
 local undodir = home .. "/.vim/undodir"
 
 if vim.fn.isdirectory(undodir) == 0 then
-    vim.fn.mkdir(undodir, "p")
+  vim.fn.mkdir(undodir, "p")
 end
 
 opt.undodir = undodir
@@ -38,7 +41,13 @@ opt.undofile = true
 -- Custom modules
 require("keys")
 require("lsp")
+require("treesitter")
 
 -- Mini Stuff
+require('mini.pick').setup({})
 require('mini.pairs').setup({})
 require('mini.completion').setup({})
+require('mini.snippets').setup({})
+require('mini.icons').setup({
+  style = 'ascii'
+})
