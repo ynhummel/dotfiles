@@ -1,8 +1,8 @@
 # ~/.bash_profile: executed by bash(1) for login shells.
 
 # Editor Settings
-export EDITOR="hx"
-export VISUAL="hx"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # XDG Base Directory Specifications
 export XDG_CONFIG_HOME="$HOME/.config"
