@@ -14,3 +14,6 @@ keymap("n", "<C-u>", "<C-u>zz")
 -- Move blocks of code up and down
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Netrw
+keymap('n', "<leader>e", ":Ex<CR>")

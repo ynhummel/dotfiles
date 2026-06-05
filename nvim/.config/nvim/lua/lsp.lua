@@ -1,6 +1,5 @@
 local keymap = vim.keymap.set
 
--- Diagnostics
 keymap('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 keymap('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
 keymap('n', '<leader>d', vim.diagnostic.setloclist)
@@ -10,7 +9,6 @@ keymap('n', '<leader>D', vim.diagnostic.setqflist)
 local on_attach = function(_, bufnr)
   local opts = { buffer = bufnr }
 
-  -- Keymaps for LSP actions
   keymap('n', 'K', vim.lsp.buf.hover, opts)
   keymap('n', 'gD', vim.lsp.buf.declaration, opts)
   keymap('n', 'gd', vim.lsp.buf.definition, opts)
@@ -31,7 +29,7 @@ vim.lsp.config('*', {
 })
 
 -- Define the servers you have installed via your global Home Manager LSP module
-local servers = { 'lua_ls', 'gopls', 'yamlls' }
+local servers = { 'lua_ls', 'gopls', 'yamlls', 'ts_ls', 'eslint', 'html', 'jsonls', 'cssls' }
 
 -- Activate them sequentially
 for _, lsp in ipairs(servers) do

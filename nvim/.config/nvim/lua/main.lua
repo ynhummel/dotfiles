@@ -39,17 +39,7 @@ opt.undodir = undodir
 opt.undofile = true
 
 -- Custom modules
+require("treesitter")
+require("mini")
 require("keys")
 require("lsp")
-require("treesitter")
-
--- Mini Stuff
-require('mini.pick').setup({})
--- require('mini.files').setup({})
-require('mini.pairs').setup({})
-require('mini.completion').setup({})
--- require('mini.snippets').setup({})
-require('mini.icons').setup({
-  style = 'ascii'
-})
-
