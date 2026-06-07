@@ -29,7 +29,18 @@ vim.lsp.config('*', {
 })
 
 -- Define the servers you have installed via your global Home Manager LSP module
-local servers = { 'lua_ls', 'gopls', 'yamlls', 'ts_ls', 'eslint', 'html', 'jsonls', 'cssls' }
+local servers = {
+  'lua_ls',
+  'gopls',
+  'yamlls',
+  'ts_ls',
+  'eslint',
+  'html',
+  'jsonls',
+  'cssls',
+  'basedpyright',
+  'ruff',
+}
 
 -- Activate them sequentially
 for _, lsp in ipairs(servers) do
