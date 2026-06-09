@@ -1,3 +1,8 @@
+local keymap = vim.keymap.set
+
+local MiniDiff = require('mini.diff')
+local MiniPick = require('mini.pick')
+
 require('mini.pairs').setup({})
 
 require('mini.surround').setup({})
@@ -9,12 +14,16 @@ require('mini.icons').setup({
 })
 
 ----------
+-- DIFF --
+----------
+MiniDiff.setup({})
+
+keymap('n', '<leader>gt', function() MiniDiff.toggle_overlay() end, { desc = "Find files including hidden" })
+
+----------
 -- PICK --
 ----------
-local MiniPick = require('mini.pick')
-MiniPick.setup({
-
-})
+MiniPick.setup({})
 
 MiniPick.registry.files_hidden = function()
   local command = { 'rg', '--files', '--hidden', '--glob', '!.git/', '--glob', '!node_modules/', '--no-follow',
@@ -29,11 +38,6 @@ MiniPick.registry.files_hidden = function()
     { source = { name = 'Files (With Hidden)', show = show_with_icons, preview = MiniPick.default_preview, } }
   )
 end
-
--------------
--- KEYMAPS --
--------------
-local keymap = vim.keymap.set
 
 keymap('n', '<leader>b', MiniPick.builtin.buffers, { desc = "Open buffers" })
 keymap('n', '<leader>/', MiniPick.builtin.grep_live, { desc = "Live grep" })
