@@ -5,5 +5,6 @@ fi
 
 if command -v nix &> /dev/null; then
     alias ncg='nix-collect-garbage'
+    alias nrs='sudo nixos-rebuild switch'
 fi
 
