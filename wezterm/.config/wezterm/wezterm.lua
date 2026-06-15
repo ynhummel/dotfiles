@@ -47,8 +47,16 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.unix_domains = {
+  {
+    -- To use with Super+T when using niri
+    name = 'niri-shared',
+  },
+}
+
 -- Font
 config.font_size = 14
+config.adjust_window_size_when_changing_font_size = false
 config.font = wezterm.font("JetBrainsMono Nerd Font", {
   weight = "Regular",
   stretch = "Normal",

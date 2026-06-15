@@ -1,6 +1,9 @@
 if command -v home-manager &> /dev/null; then
     alias hms='home-manager switch'
-    alias hmconf='$EDITOR $HOME/.config/home-manager'
+fi
+
+if command -v nix-rebuild &> /dev/null; then
+    alias nrs='sudo nixos-rebuild switch'
 fi
 
 if command -v nix &> /dev/null; then
