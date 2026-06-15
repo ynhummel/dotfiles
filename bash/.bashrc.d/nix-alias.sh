@@ -2,7 +2,7 @@ if command -v home-manager &> /dev/null; then
     alias hms='home-manager switch'
 fi
 
-if command -v nix-rebuild &> /dev/null; then
+if command -v nixos-rebuild &> /dev/null; then
     alias nrs='sudo nixos-rebuild switch'
 fi
 

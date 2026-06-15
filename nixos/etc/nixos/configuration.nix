@@ -17,6 +17,9 @@
   home-manager.backupFileExtension = "bak";
   home-manager.users.yurinh = import ./home.nix;
 
+  # Dinamic Linking
+  programs.nix-ld.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
