@@ -28,6 +28,7 @@ export HELIX_RUNTIME=~/src/helix/runtime
 export GOPATH="$HOME/go"
 export GOINSTALL="/usr/local/go/bin"
 export NVM_DIR="$HOME/.config/nvm"
+export NIX_SHELL_PRESERVE_PROMPT=1
 [ -d "$HOME/.nix-profile/share" ] && export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 
 # PATH Construction
