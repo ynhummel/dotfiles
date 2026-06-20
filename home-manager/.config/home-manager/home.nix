@@ -15,6 +15,8 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     /home/yurihummel/.config/nix-modules/git.nix
     /home/yurihummel/.config/nix-modules/lsp.nix
@@ -43,6 +45,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     nerd-fonts.jetbrains-mono
+    obsidian
     wezterm
     stow
 
