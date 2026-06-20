@@ -85,7 +85,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
   # Enable Niri
   programs.niri.enable = true;
 
@@ -129,7 +128,7 @@
   users.users."yurinh" = {
     isNormalUser = true;
     description = "Yuri Nana Hummel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -149,6 +148,9 @@
   ];
 
   programs.bash.completion.enable = true;
+
+  # DOCKER
+  virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

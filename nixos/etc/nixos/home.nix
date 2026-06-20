@@ -25,6 +25,7 @@
     fzf
     bat
     kubectl
+    k3d
 
     # Proprietary
     google-chrome
@@ -68,23 +69,6 @@
       WantedBy = [ "graphical-session.target" ];
     };
   };
-
-  # systemd.user.services.wezterm-mux = {
-  #   Unit = {
-  #     Description = "WezTerm Multiplexer Daemon";
-  #     After = [ "default.target" ]; 
-  #   };
-  #
-  #   Service = {
-  #     # Removed the invalid --no-daemonize flag
-  #     ExecStart = "${pkgs.wezterm}/bin/wezterm-mux-server";
-  #     Restart = "on-failure";
-  #   };
-  #
-  #   Install = {
-  #     WantedBy = [ "default.target" ];
-  #   };
-  # };
 
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
