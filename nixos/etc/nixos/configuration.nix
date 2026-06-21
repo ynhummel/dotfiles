@@ -25,11 +25,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -66,18 +61,8 @@
     };
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "intl";
-  # };
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  # For Nautilus virtualization without Gnome
+  services.gvfs.enable= true;
 
   # Configure console keymap
   console.keyMap = "us-acentos";
@@ -88,6 +73,7 @@
   # Enable Niri
   programs.niri.enable = true;
 
+  # Login screen
   services.greetd = {
     enable = true;
     settings = {
@@ -97,9 +83,6 @@
       };
     };
   };
-
-  # For nautilus
-  services.gvfs.enable= true;
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -121,9 +104,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."yurinh" = {
     isNormalUser = true;
@@ -133,9 +113,6 @@
     #  thunderbird
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -147,10 +124,13 @@
     xwayland-satellite
   ];
 
-  programs.bash.completion.enable = true;
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # DOCKER
   virtualisation.docker.enable = true;
+
+  programs.bash.completion.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

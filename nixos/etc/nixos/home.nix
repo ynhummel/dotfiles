@@ -8,6 +8,7 @@
     /home/yurinh/.config/nix-modules/git.nix
     /home/yurinh/.config/nix-modules/lsp.nix
     /home/yurinh/.config/nix-modules/neovim.nix
+    /home/yurinh/.config/nix-modules/wayland.nix
   ];
 
   # Programs
@@ -21,26 +22,17 @@
     wezterm
     stow
     zoxide
-    mc  # Midnight Commander
+    mc 
     fzf
     bat
+
+    # Devops Tools
     kubectl
     k3d
 
     # Proprietary
     google-chrome
     obsidian
-
-    # Wayland Stack
-    waybar
-    swaybg
-    swaylock-effects
-    networkmanagerapplet
-    pavucontrol
-    mako
-    fuzzel
-    brightnessctl
-    nautilus
   ];
 
   home.file = {
