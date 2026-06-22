@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "yurihummel";
   home.homeDirectory = "/home/yurihummel";
 
@@ -18,19 +16,11 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    /home/yurihummel/.config/nix-modules/git.nix
-    /home/yurihummel/.config/nix-modules/lsp.nix
-    /home/yurihummel/.config/nix-modules/neovim.nix
+    ../../modules/git.nix
+    ../../modules/lsp.nix
+    ../../modules/neovim.nix
   ];
 
-  # Programs
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

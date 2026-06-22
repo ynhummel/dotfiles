@@ -86,7 +86,6 @@ fi
 # Initialize tools
 eval "$(fzf --bash)"
 eval "$(zoxide init bash)"
-eval "$(direnv hook bash)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 if [ -d "$HOME/.bashrc.d" ]; then
