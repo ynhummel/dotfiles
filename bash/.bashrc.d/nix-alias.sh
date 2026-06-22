@@ -1,9 +1,9 @@
 if command -v home-manager &> /dev/null; then
-    alias hms='home-manager switch'
+    alias hms='home-manager switch --flake'
 fi
 
 if command -v nixos-rebuild &> /dev/null; then
-    alias nrs='sudo nixos-rebuild switch'
+    alias nrs='sudo nixos-rebuild switch --flake'
 fi
 
 if command -v nix &> /dev/null; then
