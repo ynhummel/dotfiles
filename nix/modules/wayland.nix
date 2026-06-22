@@ -11,10 +11,10 @@
     brightnessctl   # Manage brightness
     nautilus   # File manager
 
-    # Screenshot
-    grim
-    slurp
-    swappy
+    # # Screenshot utils
+    # grim
+    # slurp
+    # swappy
   ];
 }    
 

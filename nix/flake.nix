@@ -8,11 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    mangowc = {
-      url = "github:DreamMaoMao/mangowc";
-      input.nixpkgs.follows = "nixpkgs"
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -31,7 +26,6 @@
           home-manager.backupFileExtension = "bak";
           home-manager.users.yurinh = import ./hosts/nixos/home.nix;
         }
-        mangowc.nixosModules.mango
       ];
     };
 

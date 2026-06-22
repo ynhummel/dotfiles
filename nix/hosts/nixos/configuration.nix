@@ -66,17 +66,14 @@
   services.printing.enable = true;
 
   # Enable Niri
-  # programs.niri.enable = true;
-
-  # Enable MangoWM
-  programs.mango.enable = true;
+  programs.niri.enable = true;
 
   # Login screen
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd mango";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
         user = "greeter";
       };
     };
@@ -156,5 +153,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
-
 }
