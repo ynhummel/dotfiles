@@ -1,17 +1,14 @@
 { config, pkgs, ... }:
-
-{
+let 
+  gitPersonalDirs = [
+    "~/dotfiles/"
+    "~/Documents/bag/"
+  ];
+in {
   home.username = "yurihummel";
   home.homeDirectory = "/home/yurihummel";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -21,19 +18,24 @@
     ../../modules/neovim.nix
   ];
 
-  home.packages = with pkgs; [
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+  programs.git = {
+    settings.user = {
+      name = "Yuri Nana Hummel";
+      email = "yuri.hummel@fretebras.com.br";
+    };
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    includes = builtins.map (dir: {
+      condition = "gitdir:${dir}";
+      contents = {
+        user = {
+          name = "Yuri Nana Hummel";
+          email = "yurihummel.dev@gmail.com";
+        };
+      };
+    }) gitPersonalDirs;
+  };
+
+  home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     obsidian
     wezterm

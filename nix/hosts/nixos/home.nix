@@ -11,6 +11,11 @@
     ../../modules/wayland.nix
   ];
 
+  programs.git.settings.user = {
+    name = "Yuri Nana Hummel";
+    email = "yurihummel.dev@gmail.com";
+  };
+
   # Programs
   programs.direnv = {
     enable = true;

@@ -13,7 +13,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     
     # NixOS Machine
-    nixosConfigurations.acer = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; }; 
       modules = [
@@ -30,11 +30,11 @@
     };
 
     # Work Machine
-    homeConfigurations."yurihummel@fretebras" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.frete = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { inherit inputs; };
       modules = [
-        ./hosts/work/home.nix
+        ./hosts/frete/home.nix
       ];
     };
 

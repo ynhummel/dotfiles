@@ -7,11 +7,6 @@
       init.defaultBranch = "main";
       merge.conflictStyle= "zdiff3";
       
-      user = {
-        name = "Yuri Nana Hummel";
-        email = "yurihummel.dev@gmail.com";
-      };
-      
       alias = {
         sw = "switch";
         nb = "checkout -b";
