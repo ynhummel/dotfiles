@@ -16,12 +16,6 @@
     email = "yurihummel.dev@gmail.com";
   };
 
-  # Programs
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     wezterm
@@ -30,6 +24,11 @@
     mc 
     fzf
     bat
+
+    # Programming tools
+    go
+    gopls
+    gotools
 
     # Devops Tools
     kubectl

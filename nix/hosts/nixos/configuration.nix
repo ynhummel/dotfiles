@@ -117,6 +117,7 @@
   environment.systemPackages = with pkgs; [
     vim 
     xwayland-satellite
+    steam-run
   ];
 
   # Install firefox.
