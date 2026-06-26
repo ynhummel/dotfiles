@@ -20,7 +20,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color|wezterm) color_prompt=yes;;
+    xterm-color|*-256color|wezterm|foot) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned

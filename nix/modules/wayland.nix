@@ -1,5 +1,4 @@
 { pkgs, ...}: {
-
   home.packages = with pkgs; [
     waybar   # Status Bat
     swaybg   # Backgroud Image
@@ -17,4 +16,3 @@
     # swappy
   ];
 }    
-
