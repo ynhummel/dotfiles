@@ -8,6 +8,7 @@
     fzf
     bat
     mc 
+    bash-completion
   ];
 
   # Terminal Config
