@@ -7,6 +7,7 @@
   imports = [
     ../../modules/git.nix
     ../../modules/lsp.nix
+    ../../modules/user.nix
     ../../modules/neovim.nix
     ../../modules/wayland.nix
   ];
@@ -17,22 +18,10 @@
   };
 
   home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    wezterm
-    stow
-    zoxide
-    mc 
-    fzf
-    bat
-
     # Programming tools
     go
     gopls
     gotools
-
-    # Devops Tools
-    kubectl
-    k3d
 
     # Proprietary
     google-chrome

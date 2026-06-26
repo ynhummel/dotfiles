@@ -17,6 +17,8 @@
         lg = "log --oneline --graph";
         df = "diff";
         dc = "diff --cached";
+        rh = "reset --hard"
+        rlc = "reset --soft HEAD~1"
       };
     };
   };

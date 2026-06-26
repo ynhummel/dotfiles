@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     stow
+    tmux
     wezterm
     zoxide
     fzf
@@ -9,6 +10,7 @@
     mc 
   ];
 
+  # Terminal Config
   programs.foot = {
     enable = true;
     server.enable = true;
