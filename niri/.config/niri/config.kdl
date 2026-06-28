@@ -104,19 +104,19 @@ input {
 
 // Outputs
 
-// output "DP-1" {
-//     mode "2560x1440@143.912"
-//     scale 1
-//     transform "normal"
-//     position x=0 y=0
-// }
-//
-// output "HDMI-A-1" {
-//     mode "2560x2880@59.967"
-//     scale 1.25
-//     transform "normal"
-//     position x=2560 y=0
-// }
+output "DP-1" {
+    mode "2560x2880@59.967"
+    scale 1.25
+    transform "normal"
+    position x=0 y=0
+}
+
+output "DP-3" {
+    mode "2560x1440@143.912"
+    scale 1
+    transform "normal"
+    position x=2048 y=432
+}
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -289,7 +289,8 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "nohup" "swaybg" "-i" "/home/nana/Pictures/gruvbox_tux.png" "-m" "fill"
+spawn-at-startup "sh" "-c" "nohup swaybg -i \"$WALLPAPER\" -m fill"
+// spawn-at-startup "nohup" "swaybg" "-i" "$WALLPAPER" "-m" "fill"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -390,14 +391,13 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
-    // Mod+T hotkey-overlay-title="Open a Terminal" { spawn "wezterm" "connect" "niri-shared"; }
     Mod+D hotkey-overlay-title="Fuzzel" { spawn "fuzzel"; }
-    Mod+B hotkey-overlay-title="Open Browser" { spawn "firefox"; }
-    // Mod+B hotkey-overlay-title="Open Browser" { spawn "google-chrome"; }
+    Mod+B hotkey-overlay-title="Open Browser" { spawn-sh "$DEFAULT_BROWSER"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "swaylock" "-f" "-c" "000000"; }
 
-
-    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    // OLD binding (keep for reference)
+    // Mod+B hotkey-overlay-title="Open Browser" { spawn "firefox"; }
+    // Mod+T hotkey-overlay-title="Open a Terminal" { spawn "wezterm" "connect" "niri-shared"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

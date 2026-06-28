@@ -32,6 +32,8 @@
 
   home.sessionVariables = {
     FLAKE_PATH = "/home/nana/dotfiles/nix#nana";
+    WALLPAPER = "/home/nana/Pictures/gruvbox_tux.png";
+    DEFAULT_BROWSER = "firefox";
   };
 
   programs.home-manager.enable = true;

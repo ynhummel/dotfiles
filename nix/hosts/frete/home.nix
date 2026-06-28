@@ -15,6 +15,7 @@ in {
     ../../modules/lsp.nix
     ../../modules/user.nix
     ../../modules/neovim.nix
+    ../../modules/wayland.nix
   ];
 
   programs.git = {
@@ -50,6 +51,8 @@ in {
 
   home.sessionVariables = {
     FLAKE_PATH = "/home/yurihummel/dotfiles/nix#frete";
+    WALLPAPER = "/home/yurihummel/Pictures/Wallpapers/chillhop.com-cosy_retreat.png";
+    DEFAULT_BROWSER = "google-chrome";
   };
 
   programs.home-manager.enable = true;
