@@ -18,6 +18,8 @@
   };
 
   home.packages = with pkgs; [
+    nautilus
+
     # Programming tools
     go
     gopls

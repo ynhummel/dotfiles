@@ -1,6 +1,9 @@
 { pkgs, ...}: {
   home.packages = with pkgs; [
     lua-language-server
+    # Golang
+    gopls
+    gotools
     # Python Stuff
     ruff
     basedpyright

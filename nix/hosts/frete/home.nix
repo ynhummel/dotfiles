@@ -49,6 +49,7 @@ in {
   };
 
   home.sessionVariables = {
+    FLAKE_PATH = "/home/yurihummel/dotfiles/nix#frete";
   };
 
   programs.home-manager.enable = true;

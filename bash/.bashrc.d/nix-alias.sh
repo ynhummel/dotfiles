@@ -1,5 +1,5 @@
 if command -v home-manager &> /dev/null; then
-    alias hms='home-manager switch --flake'
+    alias hms='home-manager switch --flake $FLAKE_PATH'
 fi
 
 if command -v nixos-rebuild &> /dev/null; then

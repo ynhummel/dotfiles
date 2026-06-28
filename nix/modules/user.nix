@@ -3,7 +3,7 @@
     nerd-fonts.jetbrains-mono
     stow
     tmux
-    wezterm
+    # wezterm
     zoxide
     fzf
     bat

@@ -11,6 +11,7 @@
     ../../modules/lsp.nix
     ../../modules/user.nix
     ../../modules/neovim.nix
+    ../../modules/wayland.nix
   ];
 
   programs.git.settings.user = {
@@ -30,6 +31,7 @@
   };
 
   home.sessionVariables = {
+    FLAKE_PATH = "/home/nana/dotfiles/nix#nana";
   };
 
   programs.home-manager.enable = true;
