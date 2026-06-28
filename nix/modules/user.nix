@@ -1,13 +1,11 @@
 { pkgs, ...}: {
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    zoxide
     stow
     tmux
-    # wezterm
-    zoxide
     fzf
     bat
-    mc 
     bash-completion
   ];
 
@@ -29,4 +27,4 @@
       };
     };
   };
-}    
+} 

@@ -20,6 +20,7 @@
 
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
+      vim-tmux-navigator
       nvim-lspconfig
       # friendly-snippets
       # conform-nvim
