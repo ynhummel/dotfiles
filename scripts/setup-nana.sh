@@ -8,7 +8,7 @@ else
 fi
 
 echo "Deploying user dotfiles..."
-stow -R --no-folding bash mc nvim tmux niri wayland-tools
+stow -R --no-folding bash nvim tmux niri wayland-tools
 
 echo "Cleaning nix garbage..."
 nix-collect-garbage
