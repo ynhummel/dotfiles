@@ -290,7 +290,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "sh" "-c" "nohup swaybg -i \"$WALLPAPER\" -m fill"
-// spawn-at-startup "nohup" "swaybg" "-i" "$WALLPAPER" "-m" "fill"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=GNOME"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
