@@ -14,6 +14,7 @@
         "niri/window"
     ],
     "modules-right": [
+        "clock",
         "mpd",
         // "idle_inhibitor",
         "pulseaudio",
@@ -27,7 +28,6 @@
         // "niri/language",
         "battery",
         "battery#bat2",
-        "clock",
         "tray",
         "custom/power"
     ],
