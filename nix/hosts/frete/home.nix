@@ -3,6 +3,7 @@ let
   gitPersonalDirs = [
     "~/dotfiles/"
     "~/Documents/bag/"
+    "~/code/c-essentials-1/"
   ];
 in {
   home.username = "yurihummel";
