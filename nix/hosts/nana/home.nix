@@ -23,6 +23,7 @@
     google-chrome
     obsidian
 
+    freelens-bin
     kubectl
     k3d
   ];
