@@ -105,17 +105,17 @@ input {
 // Outputs
 
 output "DP-1" {
-    mode "2560x2880@59.967"
-    scale 1.25
-    transform "normal"
-    position x=0 y=0
-}
-
-output "DP-3" {
     mode "2560x1440@143.912"
     scale 1
     transform "normal"
-    position x=2048 y=432
+    position x=0 y=432
+}
+
+output "DP-3" {
+    mode "2560x2880@59.982"
+    scale 1.25
+    transform "normal"
+    position x=2056 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
