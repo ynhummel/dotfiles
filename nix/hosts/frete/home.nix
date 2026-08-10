@@ -15,6 +15,7 @@ in {
     ../../modules/git.nix
     ../../modules/lsp.nix
     ../../modules/user.nix
+    ../../modules/helix.nix
     ../../modules/neovim.nix
     ../../modules/wayland.nix
   ];
@@ -39,8 +40,15 @@ in {
   home.packages = with pkgs; [
     obsidian
 
+    # devops
     kubectl
     lazydocker
+    headlamp
+
+    # record screen 
+    wf-recorder
+    ffmpeg
+    slurp
 
     grpcurl
     jq
@@ -51,7 +59,7 @@ in {
   };
 
   home.sessionVariables = {
-    FRETE = "true"
+    FRETE = "true";
     FLAKE_PATH = "/home/yurihummel/dotfiles/nix#frete";
     WALLPAPER = "/home/yurihummel/Pictures/Wallpapers/chillhop.com-cosy_retreat.png";
     DEFAULT_BROWSER = "google-chrome";

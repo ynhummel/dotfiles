@@ -1,6 +1,8 @@
 { pkgs, ...}: {
   home.packages = with pkgs; [
     helix
-    simple-completion-language-server # Snippets for Helix
+    # simple-completion-language-server # Snippets for Helix
+
+    yazi
   ];
 }    

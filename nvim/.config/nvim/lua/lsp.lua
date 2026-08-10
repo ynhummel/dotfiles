@@ -40,7 +40,6 @@ local servers = {
   'cssls',
   'basedpyright',
   'ruff',
-  'markdown_oxide',
 }
 
 -- Activate them sequentially

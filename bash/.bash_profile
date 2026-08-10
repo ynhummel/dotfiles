@@ -1,8 +1,8 @@
 # ~/.bash_profile: executed by bash(1) for login shells.
 
 # Editor Settings
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="hx"
+export VISUAL="hx"
 
 # XDG Base Directory Specifications
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -28,6 +28,7 @@ export HELIX_RUNTIME=~/src/helix/runtime
 export GOPATH="$HOME/go"
 export GOINSTALL="/usr/local/go/bin"
 export NVM_DIR="$HOME/.config/nvm"
+export DOOM_EMACS="$HOME/.config/emacs/bin"
 export NIX_SHELL_PRESERVE_PROMPT=1
 [ -d "$HOME/.nix-profile/share" ] && export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 
@@ -40,6 +41,7 @@ export NIX_SHELL_PRESERVE_PROMPT=1
 # append
 [ -d "$GOINSTALL" ] && PATH="$PATH:$GOINSTALL"
 [ -d "$GOPATH/bin" ] && PATH="$PATH:$GOPATH/bin"
+[ -d "$DOOM_EMACS" ] && PATH="$PATH:$DOOM_EMACS"
 
 # script
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"

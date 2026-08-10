@@ -4,7 +4,6 @@
     package = pkgs.emacs-pgtk;
     extraPackages = epkgs: with epkgs; [
       treesit-grammars.with-all-grammars
-      nix-ts-mode
     ];
   };
 
@@ -15,4 +14,12 @@
     # Automatically starts the daemon when you log into your graphical session
     startWithUserSession = "graphical"; 
   };
+
+  home.packages = with pkgs; [
+    nerd-fonts.symbols-only
+    symbola
+    shellcheck
+    ripgrep
+    fd
+  ];
 }
