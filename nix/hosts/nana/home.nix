@@ -10,8 +10,7 @@
     ../../modules/git.nix
     ../../modules/lsp.nix
     ../../modules/user.nix
-    ../../modules/neovim.nix
-    ../../modules/wayland.nix
+    ../../modules/helix.nix
   ];
 
   programs.git.settings.user = {
@@ -20,12 +19,6 @@
   };
 
   home.packages = with pkgs; [
-    google-chrome
-    obsidian
-
-    freelens-bin
-    kubectl
-    k3d
   ];
 
   home.file = {

@@ -1,6 +1,6 @@
-{ pkgs, ...}: {
+{ pkgs, inputs, ...}: {
   home.packages = with pkgs; [
-    helix
+    inputs.helix.packages.${pkgs.system}.default
     # simple-completion-language-server # Snippets for Helix
 
     yazi

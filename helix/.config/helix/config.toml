@@ -1,4 +1,4 @@
-theme = "base16_terminal"
+theme = "onedark_vibrant"
 
 [editor]
 true-color = true

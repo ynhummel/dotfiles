@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, helix, ... }@inputs: {
     
     # NixOS Machine
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -38,7 +43,7 @@
       ];
     };
 
-    # Fedora
+    # Home
     homeConfigurations.nana = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { inherit inputs; };

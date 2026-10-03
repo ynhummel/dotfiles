@@ -15,9 +15,12 @@ in {
     ../../modules/git.nix
     ../../modules/lsp.nix
     ../../modules/user.nix
+    ../../modules/foot.nix
     ../../modules/helix.nix
     ../../modules/neovim.nix
     ../../modules/wayland.nix
+    ../../modules/x11.nix
+    ../../modules/alacritty.nix
   ];
 
   programs.git = {
@@ -37,18 +40,21 @@ in {
     }) gitPersonalDirs;
   };
 
+  gtk = {
+    enable = true;
+      theme.name = "Yaru-dark"; # Default Ubuntu dark theme
+      iconTheme.name = "Yaru";
+      cursorTheme.name = "Yaru";
+  };
+
   home.packages = with pkgs; [
     obsidian
 
     # devops
     kubectl
     lazydocker
-    headlamp
-
-    # record screen 
-    wf-recorder
-    ffmpeg
-    slurp
+    freelens-bin
+    velero
 
     grpcurl
     jq
