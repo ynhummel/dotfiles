@@ -14,12 +14,11 @@ in {
   imports = [
     ../../modules/git.nix
     ../../modules/lsp.nix
+    ../../modules/x11.nix
     ../../modules/user.nix
     ../../modules/foot.nix
     ../../modules/helix.nix
     ../../modules/neovim.nix
-    ../../modules/wayland.nix
-    ../../modules/x11.nix
     ../../modules/alacritty.nix
   ];
 
@@ -69,6 +68,8 @@ in {
     FLAKE_PATH = "/home/yurihummel/dotfiles/nix#frete";
     WALLPAPER = "/home/yurihummel/Pictures/Wallpapers/chillhop.com-cosy_retreat.png";
     DEFAULT_BROWSER = "google-chrome";
+    EDITOR = pkgs.lib.mkForce "hx";
+    VISUAL = pkgs.lib.mkForce "hx";
   };
 
   programs.home-manager.enable = true;
