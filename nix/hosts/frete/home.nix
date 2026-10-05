@@ -22,6 +22,8 @@ in {
     ../../modules/alacritty.nix
   ];
 
+  services.ssh-agent.enable = true;
+
   programs.git = {
     settings.user = {
       name = "Yuri Nana Hummel";
