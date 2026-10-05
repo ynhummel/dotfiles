@@ -80,7 +80,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+% split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -183,7 +183,12 @@ exec_always --no-startup-id sh -c 'feh --bg-fill $WALLPAPER'
 exec_always --no-startup-id autorandr --change
 exec_always --no-startup-id setxkbmap us -variant altgr-intl
 
-# Oh shit keybing, enter in laptop only layout
-bindsym $mod+Shift+g exec --no-startup-id sh -c "autorandr --load mobile && ~/.config/polybar/launch.sh"
+# Oh shit keybinds
+bindsym $mod+Shift+Mod1+1 exec --no-startup-id sh -c "autorandr --load mobile && ~/.config/polybar/launch.sh"
+bindsym $mod+Shift+Mod1+2 exec --no-startup-id sh -c "autorandr --load clamshell && ~/.config/polybar/launch.sh"
+
+#Screenshot
 bindsym --release $mod+Shift+s exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+
+#Lock Screen
 bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lock.sh
