@@ -178,6 +178,7 @@ bindsym $mod+r mode "resize"
 #         status_command polybar
 # }
 
+exec_always --no-startup-id picom -b --backend xrender
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id sh -c 'feh --bg-fill $WALLPAPER'
 exec_always --no-startup-id autorandr --change
